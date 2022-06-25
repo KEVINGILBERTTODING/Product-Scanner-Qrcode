@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -93,7 +94,7 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
    // Method untuk memanggil data barang
     
     private void getDataBarang(String result){
-        String url="http://192.168.11.19/qrcode/cari_qrcode.php?kode="+result;
+        String url="http://172.20.10.3/qrcode/cari_qrcode.php?kode="+result;
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.PUT,url,null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -108,27 +109,35 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
                                 nama = jsonobject.getString("nama_barang");
                                 harga = jsonobject.getString("harga");
 
-                                // Mengambil tanggal dan waktu saat ini
-                                String tanggal = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-                                String waktu = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+//                                // Mengambil tanggal dan waktu saat ini
+//                                String tanggal = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+//                                String waktu = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
 
-                                AlertDialog alertDialog = new AlertDialog.Builder(MediaBarcode.this).create();
-                                alertDialog.setTitle("Hasil Scanning");
-                                alertDialog.setIcon(R.drawable.qr_code2);
-                                DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
-                                alertDialog.setMessage("Kode Barcode : " + kode + "\nNama Barang : " + nama + "\nHarga Barang : " + decimalFormat.format(Double.parseDouble(harga)));
+//                                AlertDialog alertDialog = new AlertDialog.Builder(MediaBarcode.this).create();
+//                                alertDialog.setTitle("Hasil Scanning");
+//                                alertDialog.setIcon(R.drawable.qr_code2);
+//                                DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+//                                alertDialog.setMessage("Kode Barcode : " + kode + "\nNama Barang : " + nama + "\nHarga Barang : " + decimalFormat.format(Double.parseDouble(harga)));
+//
+//                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+//                                        new DialogInterface.OnClickListener() {
+//                                            public void onClick(DialogInterface dialog, int which) {
+//                                                dialog.dismiss();
+//                                                tambahData(kode, nama, harga, tanggal, waktu);
+//
+//                                                finish();
+//                                            }
+//                                        });
+//                                alertDialog.show();
 
-                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                                tambahData(kode, nama, harga, tanggal, waktu);
+                                Intent intent = new Intent(MediaBarcode.this, PenjualanActivity.class);
+                                intent.putExtra("kd_brg2", kode);
+                                intent.putExtra("nm_brg2", nama);
+                                intent.putExtra("hrg_brg2", harga);
+                                startActivity(intent);
 
-                                                finish();
-                                            }
-                                        });
-                                alertDialog.show();
+
                                 Toast.makeText(MediaBarcode.this, "Barang ditemukan: "+nama, Toast.LENGTH_SHORT).show();
 
 
@@ -148,18 +157,18 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
         requestQueue.add(jsonArrayRequest);
     }
 
-
-    private void tambahData(String kode, String nama, String harga, String tanggal, String waktu ) {
-        String barang = refBarang.push().getKey();
-
-        refBarang.child(barang).child("kode").setValue(kode);
-        refBarang.child(barang).child("nama").setValue(nama);
-        refBarang.child(barang).child("harga").setValue(harga);
-        refBarang.child(barang).child("tanggal").setValue(tanggal);
-        refBarang.child(barang).child("Time").setValue(waktu);
-        Toast.makeText(MediaBarcode.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
-    }
-
+//
+//    private void tambahData(String kode, String nama, String harga, String tanggal, String waktu ) {
+//        String barang = refBarang.push().getKey();
+//
+//        refBarang.child(barang).child("kode").setValue(kode);
+//        refBarang.child(barang).child("nama").setValue(nama);
+//        refBarang.child(barang).child("harga").setValue(harga);
+//        refBarang.child(barang).child("tanggal").setValue(tanggal);
+//        refBarang.child(barang).child("Time").setValue(waktu);
+//        Toast.makeText(MediaBarcode.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
+//    }
+//
 
 
 }

@@ -15,8 +15,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class PenjualanActivity extends AppCompatActivity {
 
     EditText kd_brg, nm_brg, hrg_brg;
-    Button btn_simpan;
-
     String kode_brg, nama_brg, harga_brg;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
