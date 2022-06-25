@@ -88,7 +88,7 @@ public class TransaksiActivity extends AppCompatActivity {
         });
 
         fabAdd.setOnClickListener(view -> {
-            startActivity(new Intent(TransaksiActivity.this, TambahBarang.class));
+            startActivity(new Intent(TransaksiActivity.this, MediaBarcode.class));
         });
 
         btnBack.setOnClickListener(view -> {

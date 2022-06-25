@@ -73,8 +73,6 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
             nm_brg = itemView.findViewById(R.id.tv_nmbrg);
             hrg_brg = itemView.findViewById(R.id.tv_harga);
 
-
-
         }
     }
 
