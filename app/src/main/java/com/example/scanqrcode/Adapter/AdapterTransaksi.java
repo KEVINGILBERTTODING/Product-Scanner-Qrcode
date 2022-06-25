@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.scanqrcode.Model.TransaksiModel;
 import com.example.scanqrcode.R;
 
@@ -44,6 +47,13 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
         holder.nm_brg2.setText(transaksiModels.get(position).getNama());
         holder.hrg_brg2.setText(formatRupiah(Double.parseDouble(transaksiModels.get(position).getHarga())));
 
+        Glide.with(context)
+                .load("http://192.168.11.19/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
+                .thumbnail(0.5f)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(holder.img_brg2);
+
+
 
     }
 
@@ -62,12 +72,14 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView kd_brg2,nm_brg2,hrg_brg2;
+        ImageView img_brg2;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             kd_brg2 = itemView.findViewById(R.id.tv_kdbrg2);
             nm_brg2 = itemView.findViewById(R.id.tv_nmbrg2);
             hrg_brg2 = itemView.findViewById(R.id.tv_harga2);
+            img_brg2 = itemView.findViewById(R.id.img_barang2);
 
 
 

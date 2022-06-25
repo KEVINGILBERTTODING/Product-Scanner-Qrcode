@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/img_barang2"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:src="@drawable/qr_code2" />
 
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_toRightOf="@id/img_barang2"
+            android:layout_marginTop="@dimen/_20sdp"
             >
 
 
