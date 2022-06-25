@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.scanqrcode.Model.BarangModel;
 import com.example.scanqrcode.Utill.DataApi;
 import com.example.scanqrcode.Utill.InterfaceBarang;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,6 +23,11 @@ public class TambahBarang extends AppCompatActivity {
     EditText xkd_brg, xnm_brg, xhrg_brg;
     InterfaceBarang interfaceBarang;
     Button btnsimpan, btlview;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference refBarang = database.getReference("Barang");
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,9 @@ public class TambahBarang extends AppCompatActivity {
         String kode_brg = xkd_brg.getText().toString();
         String nama_brg = xnm_brg.getText().toString();
         String harga_brg = xhrg_brg.getText().toString();
+
+
+        tambahData(kode_brg, nama_brg, harga_brg);
 
         Call<BarangModel> postBarang = interfaceBarang.postBarang(kode_brg,
                 nama_brg, harga_brg);
@@ -57,6 +67,17 @@ public class TambahBarang extends AppCompatActivity {
             }
         });
     }
+
+
+    private void tambahData(String kode, String nama, String harga ) {
+        String barang = refBarang.push().getKey();
+
+        refBarang.child(barang).child("kode").setValue(kode);
+        refBarang.child(barang).child("nama").setValue(nama);
+        refBarang.child(barang).child("harga").setValue(harga);
+        Toast.makeText(TambahBarang.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
+    }
+
 
     public void btnback(View view) {
         startActivity(new Intent(TambahBarang.this,MainActivity.class));
