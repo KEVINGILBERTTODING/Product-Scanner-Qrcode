@@ -2,14 +2,21 @@ package com.example.scanqrcode;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.scanqrcode.Adapter.AdapterTransaksi;
@@ -26,7 +33,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TransaksiActivity extends AppCompatActivity {
+public class TransaksiActivity extends AppCompatActivity  {
 
     private RecyclerView.LayoutManager layoutManager;
     private AdapterTransaksi adapterTrans;
@@ -205,4 +212,14 @@ public class TransaksiActivity extends AppCompatActivity {
 
     }
 
-}
+
+
+
+
+
+    }
+
+
+
+
+

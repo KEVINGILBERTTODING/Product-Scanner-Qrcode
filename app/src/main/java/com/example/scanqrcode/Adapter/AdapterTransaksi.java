@@ -1,6 +1,7 @@
 package com.example.scanqrcode.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.scanqrcode.Model.TransaksiModel;
+import com.example.scanqrcode.PenjualanActivity;
 import com.example.scanqrcode.R;
+import com.example.scanqrcode.TransaksiActivity;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -48,7 +51,7 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
         holder.hrg_brg2.setText(formatRupiah(Double.parseDouble(transaksiModels.get(position).getHarga())));
 
         Glide.with(context)
-                .load("http://192.168.11.19/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
+                .load("http://172.20.10.3/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.img_brg2);
@@ -70,7 +73,8 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
 
 
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView kd_brg2,nm_brg2,hrg_brg2;
         ImageView img_brg2;
 
@@ -80,6 +84,20 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
             nm_brg2 = itemView.findViewById(R.id.tv_nmbrg2);
             hrg_brg2 = itemView.findViewById(R.id.tv_harga2);
             img_brg2 = itemView.findViewById(R.id.img_barang2);
+            itemView.setOnClickListener(this);
+
+
+
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent (view.getContext(), PenjualanActivity.class);
+            intent.putExtra("kd_brg2", kd_brg2.getText().toString());
+            intent.putExtra("nm_brg2", nm_brg2.getText().toString());
+            intent.putExtra("hrg_brg2", hrg_brg2.getText().toString());
+            view.getContext().startActivity(intent);
 
 
 
