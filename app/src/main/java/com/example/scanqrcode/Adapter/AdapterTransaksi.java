@@ -49,6 +49,8 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
         holder.kd_brg2.setText(transaksiModels.get(position).getKode());
         holder.nm_brg2.setText(transaksiModels.get(position).getNama());
         holder.hrg_brg2.setText(formatRupiah(Double.parseDouble(transaksiModels.get(position).getHarga())));
+        holder.jml_brg2.setText(transaksiModels.get(position).getJumlah());
+        holder.satuan_brg2.setText(transaksiModels.get(position).getSatuan());
 
         Glide.with(context)
                 .load("http://172.20.10.3/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
@@ -75,7 +77,7 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView kd_brg2,nm_brg2,hrg_brg2;
+        TextView kd_brg2,nm_brg2,hrg_brg2, jml_brg2, satuan_brg2;
         ImageView img_brg2;
 
         public MyViewHolder(View itemView) {
@@ -83,6 +85,8 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
             kd_brg2 = itemView.findViewById(R.id.tv_kdbrg2);
             nm_brg2 = itemView.findViewById(R.id.tv_nmbrg2);
             hrg_brg2 = itemView.findViewById(R.id.tv_harga2);
+            jml_brg2 = itemView.findViewById(R.id.tv_jumlah2);
+            satuan_brg2 = itemView.findViewById(R.id.tv_satuan2);
             img_brg2 = itemView.findViewById(R.id.img_barang2);
             itemView.setOnClickListener(this);
 
@@ -97,6 +101,8 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
             intent.putExtra("kd_brg2", kd_brg2.getText().toString());
             intent.putExtra("nm_brg2", nm_brg2.getText().toString());
             intent.putExtra("hrg_brg2", hrg_brg2.getText().toString());
+            intent.putExtra("jml_brg2", jml_brg2.getText().toString());
+            intent.putExtra("satuan_brg2", satuan_brg2.getText().toString());
             view.getContext().startActivity(intent);
 
 

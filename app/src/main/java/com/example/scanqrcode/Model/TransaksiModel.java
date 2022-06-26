@@ -13,15 +13,22 @@ public class TransaksiModel implements Serializable {
     String nama;
     @SerializedName("harga")
     String harga;
+    @SerializedName("satuan")
+    String satuan;
+    @SerializedName("jumlah")
+    String jumlah;
     @SerializedName("image")
     String image;
 
 
 
-    public TransaksiModel(String kode, String nama, String harga, String image) {
+    public TransaksiModel(String kode, String nama, String harga, String image, String satuan, String jumlah) {
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;
+        this.satuan = satuan;
+        this.jumlah = jumlah;
+
         this.image = image;
     }
 
@@ -46,6 +53,22 @@ public class TransaksiModel implements Serializable {
         this.harga = harga;
     }
 
+    public String getSatuan() {
+        return satuan;
+    }
+
+    public void setSatuan(String satuan) {
+        this.satuan = satuan;
+    }
+
+    public String getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(String jumlah) {
+        this.jumlah = jumlah;
+    }
+
     public String getImage() {
         return ServerAPI.URL +"/assets/images/"+ image;
     }
@@ -54,4 +77,6 @@ public class TransaksiModel implements Serializable {
     public void setImage(String image) {
         this.image = image;
     }
+
+
 }
