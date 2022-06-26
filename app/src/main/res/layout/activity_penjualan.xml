@@ -129,10 +129,11 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/_30sdp"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:id="@+id/btnSave"
         android:onClick="simpandata"
         android:text="Simpan"
 

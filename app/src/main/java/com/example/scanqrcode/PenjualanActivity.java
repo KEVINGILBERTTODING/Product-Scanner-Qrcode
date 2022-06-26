@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.scanqrcode.Model.BarangModel;
+import com.example.scanqrcode.Model.TransaksiModel;
+import com.example.scanqrcode.Utill.DataApi;
+import com.example.scanqrcode.Utill.InterfaceTransaksi;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,10 +20,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class PenjualanActivity extends AppCompatActivity {
 
-    EditText kd_brg, nm_brg, hrg_brg, jml_brg, satuan_brg;
+    EditText kd_brg;
+    EditText nm_brg;
+    EditText hrg_brg;
+    EditText jml_brg;
+    EditText satuan_brg;
     String kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu;
+
+    Button save;
+
+    InterfaceTransaksi interfaceTransaksi;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference refPenjualan = database.getReference("Penjualan");
@@ -54,6 +70,9 @@ public class PenjualanActivity extends AppCompatActivity {
         satuan_barg = satuan_brg.getText().toString();
 
 
+
+
+
     }
 
     private void disableEdittext() {
@@ -78,13 +97,35 @@ public class PenjualanActivity extends AppCompatActivity {
         hrg_brg = findViewById(R.id.inHrgBrg);
         jml_brg = findViewById(R.id.inJumlahBrg);
         satuan_brg = findViewById(R.id.inSatuanBrg);
+        save = findViewById(R.id.btnSave);
     }
 
     public void simpandata(View view) {
-        simpanPenjualan(kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu);
-        startActivity(new Intent(PenjualanActivity.this, TransaksiActivity.class));
+        DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, jumlah_brg).enqueue(new Callback<TransaksiModel>() {
+            @Override
+            public void onResponse(Call<TransaksiModel> call, Response<TransaksiModel> response) {
+                if (response.isSuccessful()) {
+
+                    // Memanggil method simpan ke firebase
+                    simpanPenjualan(kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu);
+
+                    Toast.makeText(PenjualanActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(PenjualanActivity.this, TransaksiActivity.class));
+                } else {
+                    Toast.makeText(PenjualanActivity.this, "Data gagal disimpan", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+            @Override
+            public void onFailure(Call<TransaksiModel> call, Throwable t) {
+                Toast.makeText(PenjualanActivity.this, "Cek koneksi internet anda", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
+
+    // Method simpan data ke dalam firebase
 
     private void simpanPenjualan(String kode_brg, String nama_brg, String harga_brg, String jumlah_brg, String satuan_barg, String tanggal, String waktu) {
         String penjualan = refPenjualan.push().getKey();

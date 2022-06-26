@@ -16,10 +16,10 @@ public interface InterfaceTransaksi {
     @GET("qrcode/")
     Call<List<TransaksiModel>> getBarang2();
     @FormUrlEncoded
-    @POST("qrcode/")
-    Call<TransaksiModel> postBarang(@Field("kode") String kode,
-                                 @Field("nama") String nama_barang,
-                                 @Field("harga") String harga);
+    @POST("qrcode/transaksi.php")
+    Call<TransaksiModel> simpanPenjualan(@Field("kode") String kode,
+                                 @Field("jumlah") String jumlah);
+
     @DELETE("qrcode/")
     Call<TransaksiModel> deleteBarang(@Query("kode") String kode);
 }
