@@ -13,24 +13,34 @@
     card_view:cardUseCompatPadding="true"
     android:background="@color/white">
 
+    <View
+        android:layout_width="@dimen/_5sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:rotation="360"
+        android:background="@color/main"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
         android:padding="@dimen/_5sdp">
 
-        <ImageView
-            android:id="@+id/img_barang2"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:src="@drawable/qr_code2" />
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/img_barang2"-->
+<!--            android:layout_width="@dimen/_35sdp"-->
+<!--            android:layout_height="@dimen/_35sdp"-->
+<!--            android:layout_marginRight="@dimen/_10sdp"-->
+<!--            android:src="@drawable/qr_code2" />-->
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_toRightOf="@id/img_barang2"
+
             >
 
 
@@ -66,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
-            android:fontFamily="@font/popmed"
+            android:fontFamily="@font/popsem"
+            android:textColor="@color/main"
             android:text="B0001"
             android:textSize="@dimen/_10sdp" />
 

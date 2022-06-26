@@ -20,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TambahBarang extends AppCompatActivity {
-    EditText xkd_brg, xnm_brg, xhrg_brg;
+    EditText xkd_brg, xnm_brg, xhrg_brg, xjml_brg, xsatuan_brg;
     InterfaceBarang interfaceBarang;
     Button btnsimpan, btlview;
 
@@ -32,9 +32,15 @@ public class TambahBarang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_barang);
+
+
+
+
         xkd_brg = findViewById(R.id.xkode);
         xnm_brg = findViewById(R.id.xnmbrg);
         xhrg_brg = findViewById(R.id.xharga);
+        xjml_brg = findViewById(R.id.xjumlah);
+        xsatuan_brg = findViewById(R.id.xsatuan);
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
     }
 
@@ -43,12 +49,14 @@ public class TambahBarang extends AppCompatActivity {
         String kode_brg = xkd_brg.getText().toString();
         String nama_brg = xnm_brg.getText().toString();
         String harga_brg = xhrg_brg.getText().toString();
+        String jumlah_brg = xjml_brg.getText().toString();
+        String satuan_brg = xsatuan_brg.getText().toString();
 
 
-        tambahData(kode_brg, nama_brg, harga_brg);
+        tambahData(kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_brg);
 
         Call<BarangModel> postBarang = interfaceBarang.postBarang(kode_brg,
-                nama_brg, harga_brg);
+                nama_brg, harga_brg, jumlah_brg, satuan_brg);
         postBarang.enqueue(new Callback<BarangModel>() {
             @Override
             public void onResponse(Call<BarangModel> call, Response<BarangModel>
@@ -69,12 +77,14 @@ public class TambahBarang extends AppCompatActivity {
     }
 
 
-    private void tambahData(String kode, String nama, String harga ) {
+    private void tambahData(String kode, String nama, String harga, String jumlah, String satuan) {
         String barang = refBarang.push().getKey();
 
         refBarang.child(barang).child("kode").setValue(kode);
         refBarang.child(barang).child("nama").setValue(nama);
         refBarang.child(barang).child("harga").setValue(harga);
+        refBarang.child(barang).child("jumlah").setValue(jumlah);
+        refBarang.child(barang).child("satuan").setValue(satuan);
         Toast.makeText(TambahBarang.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
     }
 

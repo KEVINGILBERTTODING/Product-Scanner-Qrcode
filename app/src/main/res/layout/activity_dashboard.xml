@@ -7,146 +7,206 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-    <xyz.sahildave.arclayout.ArcLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/arc_layout"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        app:arc_cropCurve="cropConvex"
-        app:arc_height="48dp"
-        app:arc_position="bottom">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/main"
-            android:orientation="vertical" />
+            android:layout_height="@dimen/_80sdp"
+            android:background="@drawable/wave">
 
-    </xyz.sahildave.arclayout.ArcLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvt_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/popsem"
-        android:text="Halo, Selamat datang"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_11sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginLeft="@dimen/_16sdp"
-        />
-    <TextView
-        android:id="@+id/tvt_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/popsem"
-        android:text="Temukan dan scan QR Code"
-        android:layout_below="@id/tvt_1"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_13sdp"
-        android:layout_marginLeft="@dimen/_16sdp"
-        />
+                <TextView
+                    android:id="@+id/tvt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/popmed"
+                    android:text="Halo, Diana Thamara"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        >
+                <TextView
+                    android:id="@+id/tvt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvt_1"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:fontFamily="@font/popsem"
+                    android:text="Scan barcode untuk mengambil data"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
 
-        <LinearLayout
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </FrameLayout>
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_centerVertical="true">
 
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/_16sdp"
+                android:orientation="vertical">
 
-                >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/white"
-                    android:layout_marginRight="@dimen/_15sdp"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardUseCompatPadding="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_16sdp"
+
                     >
-                    <ImageButton
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
-                        android:background="@drawable/ic_barang"
-                        android:id="@+id/btn_barang"/>
 
-                </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btn_barang"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_90sdp"
+                                android:background="@drawable/ic_barang" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/popsem"
+                                android:text="Barang"
+                                android:textSize="@dimen/_13sdp" />
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btn_transaksi"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_90sdp"
+                                android:background="@drawable/ic_transaction" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/popsem"
+                                android:text="Transaksi"
+                                android:textSize="@dimen/_13sdp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardUseCompatPadding="true"
-                    >
-                    <ImageButton
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
-                        android:background="@drawable/ic_transaction"
-                        android:id="@+id/btn_transaksi"/>
-                </androidx.cardview.widget.CardView>
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_16sdp">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/_16sdp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
 
-                >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    android:layout_marginRight="@dimen/_15sdp"
-                    app:cardUseCompatPadding="true"
-                    >
-                    <ImageButton
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
-                        android:background="@drawable/ic_about"
-                        android:id="@+id/btn_about"/>
+                            <ImageButton
+                                android:id="@+id/btn_about"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_90sdp"
+                                android:background="@drawable/ic_about" />
 
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/popsem"
+                                android:text="About Me"
+                                android:textSize="@dimen/_13sdp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardUseCompatPadding="true"
-                    >
-                    <ImageButton
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
-                        android:background="@drawable/ic_close"
-                        android:id="@+id/btn_close"/>
-                </androidx.cardview.widget.CardView>
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/btn_close"
+                                android:layout_width="@dimen/_90sdp"
+                                android:layout_height="@dimen/_90sdp"
+                                android:background="@drawable/ic_close" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/popsem"
+                                android:text="Keluar"
+                                android:textSize="@dimen/_13sdp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 

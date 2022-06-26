@@ -43,6 +43,9 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
      String kode = "";
      String nama="";
      String harga = "";
+     String jumlah = "";
+     String satuan = "";
+
 
 
 
@@ -108,6 +111,9 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
                                 kode = jsonobject.getString("kode");
                                 nama = jsonobject.getString("nama_barang");
                                 harga = jsonobject.getString("harga");
+                                jumlah = jsonobject.getString("jumlah");
+                                satuan = jsonobject.getString("satuan");
+
 
 //                                // Mengambil tanggal dan waktu saat ini
 //                                String tanggal = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
@@ -135,6 +141,8 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
                                 intent.putExtra("kd_brg2", kode);
                                 intent.putExtra("nm_brg2", nama);
                                 intent.putExtra("hrg_brg2", harga);
+                                intent.putExtra("jml_brg2", jumlah);
+                                intent.putExtra("satuan_brg2", satuan);
                                 startActivity(intent);
 
 
