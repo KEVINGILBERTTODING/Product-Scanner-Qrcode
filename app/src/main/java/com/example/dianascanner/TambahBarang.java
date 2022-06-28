@@ -52,6 +52,7 @@ public class TambahBarang extends AppCompatActivity {
     Button btnImage;
     ImageView imageView;
     ProgressDialog pd;
+    String kodeBarang;
 
     Bitmap bitmap;
 
@@ -84,13 +85,14 @@ public class TambahBarang extends AppCompatActivity {
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
 
 
+
         pd = new ProgressDialog(TambahBarang.this);
         mGalery = new GalleryPhoto(getApplicationContext());
+
 
         btnImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivityForResult(mGalery.openGalleryIntent(),TAG_GALLERY);
                 ActivityCompat.requestPermissions(
                         TambahBarang.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
@@ -101,45 +103,74 @@ public class TambahBarang extends AppCompatActivity {
     }
 
 
+    // Method saat button di klik
     public void simpandata(View view) {
-        String kode_brg = xkd_brg.getText().toString();
-        String nama_brg = xnm_brg.getText().toString();
-        String harga_brg = xhrg_brg.getText().toString();
-        String jumlah_brg = xjml_brg.getText().toString();
-        String satuan_brg = xsatuan_brg.getText().toString();
+
+        // Validasi form
+
+        if (xkd_brg.getText().toString().isEmpty() || xnm_brg.getText().toString().isEmpty() || xhrg_brg.getText().toString().isEmpty() ||
+            xjml_brg.getText().toString().isEmpty() ||xsatuan_brg.getText().toString().isEmpty()) {
+
+            xkd_brg.setError("Masukkan kode barang");
+            xnm_brg.setError("Masukkan nama barang");
+            xhrg_brg.setError("Masukkan harga barang");
+            xjml_brg.setError("Masukkan jumlah barang");
+            xsatuan_brg.setError("Masukkan satuan barang");
+        }
+
+        else {
+
+            pd.setMessage("Mengirim Data");
+            pd.setCancelable(false);
+            pd.show();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] imageBytes = baos.toByteArray();
+            final String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+
+            String kode_brg = xkd_brg.getText().toString();
+            String nama_brg = xnm_brg.getText().toString();
+            String harga_brg = xhrg_brg.getText().toString();
+            String jumlah_brg = xjml_brg.getText().toString();
+            String satuan_brg = xsatuan_brg.getText().toString();
+
+            Call<BarangModel> postBarang = interfaceBarang.postBarang(kode_brg,
+                    nama_brg, harga_brg, jumlah_brg, satuan_brg, imageString);
+            postBarang.enqueue(new Callback<BarangModel>() {
+                @Override
+                public void onResponse(Call<BarangModel> call, Response<BarangModel>
+                        response) {
+
+                    // Memanggil method firebase
+                    tambahData(kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_brg);
+
+                    Toast.makeText(TambahBarang.this, "Berhasil menyimpan data",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(TambahBarang.this,MainActivity.class);
+                    startActivity(intent);
 
 
-        tambahData(kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_brg);
-        simpanGambar();
-
-        Call<BarangModel> postBarang = interfaceBarang.postBarang(kode_brg,
-                nama_brg, harga_brg, jumlah_brg, satuan_brg);
-        postBarang.enqueue(new Callback<BarangModel>() {
-            @Override
-            public void onResponse(Call<BarangModel> call, Response<BarangModel>
-                    response) {
-                Toast.makeText(TambahBarang.this, "Save data Success",
-                        Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(TambahBarang.this,MainActivity.class);
-                startActivity(intent);
+                }
+                @Override
+                public void onFailure(Call<BarangModel> call, Throwable t) {
+                    Toast.makeText(TambahBarang.this, "Gagal menyimpan data",
+                            Toast.LENGTH_SHORT).show();
+                    pd.cancel();
+                }
+            });
+        }
 
 
 
-            }
-            @Override
-            public void onFailure(Call<BarangModel> call, Throwable t) {
-                Toast.makeText(TambahBarang.this, "Save data not Success",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
 
 
     }
 
+    // Method untuk insert data ke firebase
+
 
     private void tambahData(String kode, String nama, String harga, String jumlah, String satuan) {
         String barang = refBarang.push().getKey();
-
         refBarang.child(barang).child("kode").setValue(kode);
         refBarang.child(barang).child("nama").setValue(nama);
         refBarang.child(barang).child("harga").setValue(harga);
@@ -148,58 +179,6 @@ public class TambahBarang extends AppCompatActivity {
         Toast.makeText(TambahBarang.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
     }
 
-    private void simpanGambar(){
-        pd.setMessage("Mengirim Data");
-        pd.setCancelable(false);
-        pd.show();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] imageBytes = baos.toByteArray();
-        final String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-
-        StringRequest sendData = new StringRequest(Request.Method.POST, ServerAPI.URL_SIMPAN_GAMBAR,
-                new com.android.volley.Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response)
-                    {
-                        pd.cancel();
-                        Log.d("TAG", "onResponse: "+response);
-                        try {
-                            JSONObject res = new JSONObject(response);
-                            Toast.makeText(TambahBarang.this, "pesan : " +
-                                    res.getString("message"), Toast.LENGTH_SHORT).show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        Intent intent = new Intent(getApplicationContext(), TambahBarang.class);
-
-                        startActivity(intent);
-                        finish();
-                    }
-                },
-                new com.android.volley.Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        pd.cancel();
-                        Toast.makeText(TambahBarang.this, "pesan : Gagal Kirim Data", Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() {
-
-
-                Map<String, String> map = new HashMap<>();
-                map.put("kode", xkd_brg.getText().toString());
-                map.put("gambar", imageString);
-                return map;
-            }
-        };
-
-
-        AppController.getInstance().addToRequestQueue(sendData);
-
-
-    }
 
 
     public void btnback(View view) {
@@ -218,7 +197,7 @@ public class TambahBarang extends AppCompatActivity {
                 startActivityForResult(galleryIntent, TAG_GALLERY);
             }
             else {
-                Toast.makeText(this, "Tidak ada perizinan untuk mengakses gambar", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Tidak ada akses gallery", Toast.LENGTH_SHORT).show();
             }
             return;
         }
@@ -237,7 +216,7 @@ public class TambahBarang extends AppCompatActivity {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri_path);
                 imageView.setImageBitmap(bitmap);
 
-                Snackbar.make(findViewById(android.R.id.content), "Success Loader Image", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content), "Berhasil memuat gambar", Snackbar.LENGTH_SHORT).show();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
 

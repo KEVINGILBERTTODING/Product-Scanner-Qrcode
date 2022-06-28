@@ -21,7 +21,8 @@ import retrofit2.http.Query;
                                       @Field("nama_barang") String nama,
                                       @Field("harga") String harga,
                                       @Field("jumlah") String jumlah,
-                                      @Field("satuan") String satuan);
+                                      @Field("satuan") String satuan,
+                                      @Field("gambar") String image);
 
 
         @DELETE("qrcode/")

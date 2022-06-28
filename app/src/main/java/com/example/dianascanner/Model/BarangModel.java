@@ -15,14 +15,17 @@ public class BarangModel implements Serializable {
     String jumlah;
     @SerializedName("harga")
     String harga;
+    @SerializedName("image")
+    String image;
 
 
-    public BarangModel(String kode, String nama, String harga, String jumlah, String satuan) {
+    public BarangModel(String kode, String nama, String harga, String jumlah, String satuan, String image) {
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;
         this.jumlah = jumlah;
         this.satuan = satuan;
+        this.image = image;
     }
 
     public String getKode() {
@@ -62,5 +65,11 @@ public class BarangModel implements Serializable {
         this.harga = harga;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
