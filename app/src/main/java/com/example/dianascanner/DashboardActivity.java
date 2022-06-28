@@ -53,6 +53,13 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+        btn_map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this, MyMap.class));
+            }
+        });
+
 
         btn_close.setOnClickListener(new View.OnClickListener() {
             @Override
