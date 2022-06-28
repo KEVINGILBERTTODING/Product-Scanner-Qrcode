@@ -1,4 +1,4 @@
-package com.example.scanqrcode.Adapter;
+package com.example.dianascanner.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.example.scanqrcode.Model.TransaksiModel;
-import com.example.scanqrcode.PenjualanActivity;
-import com.example.scanqrcode.R;
-import com.example.scanqrcode.TransaksiActivity;
+import com.example.dianascanner.Model.TransaksiModel;
+import com.example.dianascanner.PenjualanActivity;
+import com.example.dianascanner.R;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;

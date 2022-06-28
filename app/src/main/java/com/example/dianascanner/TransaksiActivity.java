@@ -1,28 +1,21 @@
-package com.example.scanqrcode;
+package com.example.dianascanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.scanqrcode.Adapter.AdapterTransaksi;
-import com.example.scanqrcode.Model.TransaksiModel;
-import com.example.scanqrcode.Utill.DataApi;
-import com.example.scanqrcode.Utill.InterfaceTransaksi;
+import com.example.dianascanner.Adapter.AdapterTransaksi;
+import com.example.dianascanner.Model.TransaksiModel;
+import com.example.dianascanner.Utill.DataApi;
+import com.example.dianascanner.Utill.InterfaceTransaksi;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.todkars.shimmer.ShimmerRecyclerView;
 

@@ -1,4 +1,4 @@
-package com.example.scanqrcode;
+package com.example.dianascanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -13,10 +13,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 
-import com.example.scanqrcode.Adapter.BarangAdapter;
-import com.example.scanqrcode.Model.BarangModel;
-import com.example.scanqrcode.Utill.DataApi;
-import com.example.scanqrcode.Utill.InterfaceBarang;
+import com.example.dianascanner.Adapter.BarangAdapter;
+import com.example.dianascanner.Model.BarangModel;
+import com.example.dianascanner.Utill.DataApi;
+import com.example.dianascanner.Utill.InterfaceBarang;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.todkars.shimmer.ShimmerRecyclerView;
 

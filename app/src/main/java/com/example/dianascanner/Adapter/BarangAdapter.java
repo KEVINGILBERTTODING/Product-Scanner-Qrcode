@@ -1,20 +1,16 @@
-package com.example.scanqrcode.Adapter;
+package com.example.dianascanner.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.scanqrcode.MainActivity;
-import com.example.scanqrcode.Model.BarangModel;
-import com.example.scanqrcode.R;
+import com.example.dianascanner.Model.BarangModel;
+import com.example.dianascanner.R;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;

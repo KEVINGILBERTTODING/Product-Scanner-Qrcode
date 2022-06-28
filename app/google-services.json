@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "719279727795",
-    "firebase_url": "https://scanner-barang-default-rtdb.firebaseio.com",
-    "project_id": "scanner-barang",
-    "storage_bucket": "scanner-barang.appspot.com"
+    "project_number": "754825590272",
+    "firebase_url": "https://diana-scanner-default-rtdb.firebaseio.com",
+    "project_id": "diana-scanner",
+    "storage_bucket": "diana-scanner.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:719279727795:android:11770f7367c15af08c7cc6",
+        "mobilesdk_app_id": "1:754825590272:android:a6adec0869de91c69dcae5",
         "android_client_info": {
-          "package_name": "com.example.scanqrcode"
+          "package_name": "com.example.dianascanner"
         }
       },
       "oauth_client": [
         {
-          "client_id": "719279727795-avo8i825e86kac0bj1sk00rh70q3hemv.apps.googleusercontent.com",
+          "client_id": "754825590272-joufba5mlf8qjjtlun48hfke9ge8f36j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dianascanner",
+            "certificate_hash": "abfe774ba4f96c77e732ec11dcbccea049f88eb1"
+          }
+        },
+        {
+          "client_id": "754825590272-7jl261strt5sm9c4mj9vj3sidpt1bsg4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBVrzQLzGw_Gu4nq270N83xVGWftJEPlf4"
+          "current_key": "AIzaSyDC2r4BIblw2KAL_f7-Bj_RMB7BNvbnoPc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "719279727795-avo8i825e86kac0bj1sk00rh70q3hemv.apps.googleusercontent.com",
+              "client_id": "754825590272-7jl261strt5sm9c4mj9vj3sidpt1bsg4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

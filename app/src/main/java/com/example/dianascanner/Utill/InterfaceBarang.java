@@ -1,6 +1,6 @@
-package com.example.scanqrcode.Utill;
+package com.example.dianascanner.Utill;
 
-import com.example.scanqrcode.Model.BarangModel;
+import com.example.dianascanner.Model.BarangModel;
 
 import java.util.List;
 

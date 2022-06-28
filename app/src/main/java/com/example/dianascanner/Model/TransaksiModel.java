@@ -1,28 +1,34 @@
-package com.example.scanqrcode.Model;
+package com.example.dianascanner.Model;
 
+import com.example.dianascanner.Utill.ServerAPI;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class BarangModel implements Serializable {
+public class TransaksiModel implements Serializable {
     @SerializedName("kode")
     String kode;
     @SerializedName("nama_barang")
     String nama;
+    @SerializedName("harga")
+    String harga;
     @SerializedName("satuan")
     String satuan;
     @SerializedName("jumlah")
     String jumlah;
-    @SerializedName("harga")
-    String harga;
+    @SerializedName("image")
+    String image;
 
 
-    public BarangModel(String kode, String nama, String harga, String jumlah, String satuan) {
+
+    public TransaksiModel(String kode, String nama, String harga, String image, String satuan, String jumlah) {
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;
-        this.jumlah = jumlah;
         this.satuan = satuan;
+        this.jumlah = jumlah;
+
+        this.image = image;
     }
 
     public String getKode() {
@@ -37,6 +43,13 @@ public class BarangModel implements Serializable {
     }
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    public String getHarga() {
+        return harga;
+    }
+    public void setHarga(String harga) {
+        this.harga = harga;
     }
 
     public String getSatuan() {
@@ -55,11 +68,13 @@ public class BarangModel implements Serializable {
         this.jumlah = jumlah;
     }
 
-    public String getHarga() {
-        return harga;
+    public String getImage() {
+        return ServerAPI.URL +"/assets/images/"+ image;
     }
-    public void setHarga(String harga) {
-        this.harga = harga;
+    public String getImgName() { return image;  }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
 

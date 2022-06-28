@@ -1,4 +1,4 @@
-package com.example.scanqrcode;
+package com.example.dianascanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.scanqrcode.Model.BarangModel;
-import com.example.scanqrcode.Utill.DataApi;
-import com.example.scanqrcode.Utill.InterfaceBarang;
+import com.example.dianascanner.Model.BarangModel;
+import com.example.dianascanner.Utill.DataApi;
+import com.example.dianascanner.Utill.InterfaceBarang;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

@@ -1,4 +1,4 @@
-package com.example.scanqrcode;
+package com.example.dianascanner;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.scanqrcode.Utill;
+package com.example.dianascanner.Utill;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
