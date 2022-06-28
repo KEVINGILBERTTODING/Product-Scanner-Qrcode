@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    ImageButton btn_barang, btn_transaksi, btn_about, btn_close;
+    ImageButton btn_barang, btn_transaksi, btn_about, btn_close, btn_map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,5 +72,6 @@ public class DashboardActivity extends AppCompatActivity {
         btn_transaksi = findViewById(R.id.btn_transaksi);
         btn_about = findViewById(R.id.btn_about);
         btn_close = findViewById(R.id.btn_close);
+        btn_map = findViewById(R.id.btn_map);
     }
 }

@@ -52,11 +52,17 @@
             </RelativeLayout>
         </FrameLayout>
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/frmHeader1"
+            android:layout_marginTop="@dimen/_minus30sdp"
+            >
+
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/frmHeader1"
-            android:layout_marginTop="@dimen/_minus30sdp"
             android:background="@drawable/container" >
 
 
@@ -166,14 +172,35 @@
                         android:id="@+id/xharga" />
                 </LinearLayout>
 
-                    <com.google.android.material.button.MaterialButton
+                <ImageView
+                    android:id="@+id/inp_gambar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop" />
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Gambar"
+                    android:textAllCaps="false"
+                    app:cornerRadius="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_12sdp"
+                    android:id="@+id/btn_img" />
+
+
+                <com.google.android.material.button.MaterialButton
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="save "
+                        android:text="Simpan"
                         app:cornerRadius="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
                         android:layout_weight="1"
+                        android:textAllCaps="false"
                         android:textSize="@dimen/_12sdp"
                         android:onClick="simpandata"
                         android:id="@+id/buttonSave" />
@@ -181,6 +208,8 @@
 
             </LinearLayout>
         </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
     </LinearLayout>
 
 
