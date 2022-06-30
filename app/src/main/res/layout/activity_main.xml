@@ -87,14 +87,16 @@
                 android:id="@+id/swipeRefresh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
                 >
 
-                <com.todkars.shimmer.ShimmerRecyclerView
-                    android:padding="@dimen/_20sdp"
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcylrBarang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    app:spanCount="2"
+                    android:layout_marginBottom="@dimen/_90sdp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:shimmer_recycler_layout="@layout/list_data_template"
                     app:shimmer_recycler_item_count="10"

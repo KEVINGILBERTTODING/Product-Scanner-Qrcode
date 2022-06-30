@@ -2,6 +2,7 @@ package com.example.dianascanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -66,11 +67,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        setmShimmerRecyclerView();
 
 
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
         tampilkanData();
+
+
 
 
         // Fungsi saat memasukkan kata ke dalam searchview
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btnBack.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, DashboardActivity.class));
         });
+
 
 
     }
@@ -142,8 +145,14 @@ public class MainActivity extends AppCompatActivity {
 
                 barangModelList = response.body();
                 barangAdapter = new BarangAdapter(MainActivity.this, barangModelList);
-                mShimmerRecyclerView.setAdapter(barangAdapter);
-                mSwipeRefreshLayout.setRefreshing(false);
+
+                layoutManager = new LinearLayoutManager(getApplicationContext());
+                GridLayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 2);
+
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setAdapter(barangAdapter);
+                recyclerView.setHasFixedSize(true);
+
             }
 
 
@@ -171,42 +180,14 @@ public class MainActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack2);
         mSwipeRefreshLayout = findViewById(R.id.swipeRefresh);
         searchView = findViewById(R.id.search_barr);
-        mShimmerRecyclerView = findViewById(R.id.rcylrBarang);
+        recyclerView = findViewById(R.id.rcylrBarang);
     }
 
-    private void setmShimmerRecyclerView() {
 
-
-        mShimmerRecyclerView.setAdapter(barangAdapter);
-
-        mShimmerRecyclerView.setLayoutManager(new LinearLayoutManager(this),
-                R.layout.list_data_barang);
-
-        mShimmerRecyclerView.setItemViewType((type, position) -> {
-            switch (type) {
-                case ShimmerRecyclerView.LAYOUT_GRID:
-                    return position % 2 == 0
-                            ? R.layout.list_data_template
-                            : R.layout.list_data_template;
-
-                default:
-                case ShimmerRecyclerView.LAYOUT_LIST:
-                    return position == 0 || position % 2 == 0
-                            ? R.layout.list_data_template
-                            : R.layout.list_data_template;
-            }
-        });
-
-        mShimmerRecyclerView.showShimmer();     // to start showing shimmer
-
-        layoutManager = new LinearLayoutManager(this);
-        mShimmerRecyclerView.setLayoutManager(layoutManager);
-        mShimmerRecyclerView.setHasFixedSize(true);
 
 
     }
 
-}
 
 
 

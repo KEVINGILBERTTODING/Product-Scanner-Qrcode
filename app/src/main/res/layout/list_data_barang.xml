@@ -1,39 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="@dimen/_10sdp"
-    app:cardElevation="@dimen/_5sdp"
-    android:layout_margin="@dimen/_5sdp"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_150sdp"
+    card_view:cardElevation="@dimen/_5sdp"
+    card_view:cardCornerRadius="@dimen/_8sdp"
     card_view:cardUseCompatPadding="true"
-    android:background="@color/white">
+    android:layout_height="wrap_content">
 
-    <View
-        android:layout_width="@dimen/_5sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:rotation="360"
-        android:background="@color/main"/>
+<!--    <View-->
+<!--        android:layout_width="@dimen/_5sdp"-->
+<!--        android:layout_height="@dimen/_50sdp"-->
+<!--        android:rotation="360"-->
+<!--        android:background="@color/main"/>-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_5sdp"
-        android:layout_marginRight="@dimen/_5sdp"
-        android:padding="@dimen/_5sdp">
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:orientation="vertical"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/likebutton"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/like" />
 
 
+        </RelativeLayout>
 
-<!--        <ImageView-->
-<!--            android:id="@+id/img_barang2"-->
-<!--            android:layout_width="@dimen/_35sdp"-->
-<!--            android:layout_height="@dimen/_35sdp"-->
-<!--            android:layout_marginRight="@dimen/_10sdp"-->
-<!--            android:src="@drawable/qr_code2" />-->
+        <RelativeLayout
+            android:layout_width="@dimen/_124sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:foregroundGravity="center_horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/img_barang"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_centerInParent="true"
+                android:foregroundGravity="center" />
+
+        </RelativeLayout>
+
 
 
         <LinearLayout
@@ -44,6 +71,8 @@
             >
 
 
+
+
             <TextView
                 android:id="@+id/tv_nmbrg"
                 android:layout_width="wrap_content"
@@ -51,8 +80,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/popsem"
                 android:text="AirPods Pro"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:textColor="@color/main"
-                android:padding="@dimen/_2sdp"
                 android:textSize="@dimen/_11sdp"/>
 
             <TextView
@@ -61,14 +90,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="5.0000"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:fontFamily="@font/popmed"
                 android:textSize="@dimen/_10sdp" />
 
 
-
-
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/tv_kdbrg"
@@ -79,11 +106,15 @@
             android:fontFamily="@font/popsem"
             android:textColor="@color/main"
             android:text="B0001"
+            android:layout_marginLeft="@dimen/_5sdp"
             android:textSize="@dimen/_10sdp" />
 
 
 
-    </RelativeLayout>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 

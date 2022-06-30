@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.dianascanner.Model.BarangModel;
 import com.example.dianascanner.R;
 
@@ -44,6 +47,12 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
         holder.nm_brg.setText(barangModels.get(position).getNama());
         holder.hrg_brg.setText(formatRupiah(Double.parseDouble(barangModels.get(position).getHarga())));
 
+        Glide.with(context)
+                .load("http://192.168.11.19/qrcode/image_product/"+barangModels.get(position).getKode()+".png")
+                .thumbnail(0.5f)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(holder.imgBarang);
+
 
     }
 
@@ -62,12 +71,14 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView kd_brg,nm_brg,hrg_brg;
+        ImageView imgBarang;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             kd_brg = itemView.findViewById(R.id.tv_kdbrg);
             nm_brg = itemView.findViewById(R.id.tv_nmbrg);
             hrg_brg = itemView.findViewById(R.id.tv_harga);
+            imgBarang = itemView.findViewById(R.id.img_barang);
 
         }
     }
