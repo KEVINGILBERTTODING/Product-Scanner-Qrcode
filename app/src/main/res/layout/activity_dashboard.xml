@@ -5,21 +5,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/container"
     tools:context=".DashboardActivity">
+
+    <xyz.sahildave.arclayout.ArcLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/arc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        app:arc_cropCurve="cropConvex"
+        app:arc_height="48dp"
+        app:arc_position="bottom">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/wave"
+            android:orientation="vertical" />
+
+    </xyz.sahildave.arclayout.ArcLayout>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_80sdp"
-            android:background="@drawable/wave">
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="vertical">
 
                 <TextView
@@ -46,8 +63,6 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-        </FrameLayout>
 
 
         <RelativeLayout

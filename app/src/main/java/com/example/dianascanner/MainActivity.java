@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setAdapter(barangAdapter);
                 recyclerView.setHasFixedSize(true);
+                mSwipeRefreshLayout.setRefreshing(false);
 
             }
 
