@@ -24,8 +24,11 @@ public class SplashScreen extends AppCompatActivity {
         // Fungsi untuk menyembunyikan navbar
 
         setContentView(R.layout.activity_splash_screen);
+
         imageView= (ImageView) findViewById(R.id.ic_splash);
         textView= (TextView) findViewById(R.id.text_splash);
+
+
         hideNavigationBar();
         animateIcon();
         animateText();
@@ -39,7 +42,7 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                 finish();
             }
-        }, 2000L);
+        }, 2500L);
 
     }
 
