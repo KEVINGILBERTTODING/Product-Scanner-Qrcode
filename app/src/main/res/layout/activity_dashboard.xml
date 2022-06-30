@@ -14,7 +14,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/arc_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"
+        android:layout_height="@dimen/_120sdp"
         app:arc_cropCurve="cropConvex"
         app:arc_height="48dp"
         app:arc_position="bottom">
@@ -33,59 +33,57 @@
         android:orientation="vertical">
 
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvt_1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:orientation="vertical">
+                android:fontFamily="@font/popmed"
+                android:text="Halo, Diana Thamara"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp" />
 
-                <TextView
-                    android:id="@+id/tvt_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:fontFamily="@font/popmed"
-                    android:text="Halo, Diana Thamara"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_9sdp" />
+            <TextView
+                android:id="@+id/tvt_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvt_1"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:fontFamily="@font/popsem"
+                android:text="Scan barcode untuk mengambil data"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11sdp" />
 
-                <TextView
-                    android:id="@+id/tvt_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvt_1"
-                    android:layout_marginLeft="@dimen/_16sdp"
-                    android:fontFamily="@font/popsem"
-                    android:text="Scan barcode untuk mengambil data"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_11sdp" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginRight="@dimen/_16sdp"
-            android:layout_centerVertical="true">
+            android:layout_marginTop="@dimen/_60sdp"
+            android:layout_marginRight="@dimen/_16sdp">
 
             <TextView
                 android:id="@+id/tvt_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_70sdp"
                 android:fontFamily="@font/popsem"
-                android:textSize="@dimen/_13sdp"
-                android:text="Menu utama" />
+                android:text="Menu utama"
+                android:textSize="@dimen/_13sdp" />
 
             <HorizontalScrollView
                 android:layout_width="wrap_content"
-                android:layout_below="@id/tvt_3"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvt_3">
 
 
                 <LinearLayout
@@ -233,8 +231,6 @@
                         </androidx.cardview.widget.CardView>
 
 
-
-
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -322,28 +318,24 @@
                                     android:textColor="@color/black"
                                     android:textSize="@dimen/_8sdp" />
 
-
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
 
-
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
 
                 </LinearLayout>
 
             </HorizontalScrollView>
 
-
         </RelativeLayout>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_16sdp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-
 
 </RelativeLayout>
