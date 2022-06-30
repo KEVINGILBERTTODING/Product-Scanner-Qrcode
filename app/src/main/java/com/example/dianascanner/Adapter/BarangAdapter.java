@@ -1,6 +1,7 @@
 package com.example.dianascanner.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.example.dianascanner.DetailBarang;
 import com.example.dianascanner.Model.BarangModel;
 import com.example.dianascanner.R;
 
@@ -69,7 +71,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
 
 
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView kd_brg,nm_brg,hrg_brg;
         ImageView imgBarang;
 
@@ -79,6 +81,18 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
             nm_brg = itemView.findViewById(R.id.tv_nmbrg);
             hrg_brg = itemView.findViewById(R.id.tv_harga);
             imgBarang = itemView.findViewById(R.id.img_barang);
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), DetailBarang.class);
+            intent.putExtra("kd_brg", kd_brg.getText().toString());
+            intent.putExtra("nm_brg", nm_brg.getText().toString());
+            intent.putExtra("hrg_brg", hrg_brg.getText().toString());
+            intent.putExtra("img_brg", imgBarang.getDrawable().toString());
+            view.getContext().startActivity(intent);
 
         }
     }

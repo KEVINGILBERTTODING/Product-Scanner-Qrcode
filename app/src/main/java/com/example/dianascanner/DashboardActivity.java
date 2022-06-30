@@ -2,6 +2,7 @@ package com.example.dianascanner;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,11 +14,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.dianascanner.Adapter.BarangAdapter;
-import com.example.dianascanner.Adapter.DashboardAdapter;
 import com.example.dianascanner.Model.BarangModel;
 import com.example.dianascanner.Utill.DataApi;
 import com.example.dianascanner.Utill.InterfaceBarang;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,6 +33,7 @@ public class DashboardActivity extends AppCompatActivity {
     private BarangAdapter barangAdapter;
     private List<BarangModel> barangModelList;
     private InterfaceBarang interfaceBarang;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,22 @@ public class DashboardActivity extends AppCompatActivity {
                 recyclerView.setAdapter(barangAdapter);
                 recyclerView.setHasFixedSize(true);
 
+
+                // Fungsi saat memasukkan kata ke dalam searchview
+
+                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String querry) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        filter(newText);
+                        return true;
+                    }
+                });
+
             }
 
 
@@ -86,6 +104,32 @@ public class DashboardActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
                         View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+    }
+
+    // Method untuk realtime searchview
+
+    private void filter(String newText) {
+
+        ArrayList<BarangModel> filteredList = new ArrayList<>();
+
+        for (BarangModel item : barangModelList) {
+            if (item.getNama().toLowerCase().contains(newText.toLowerCase())) {
+                filteredList.add(item);
+
+            }
+        }
+
+
+        barangAdapter.filterList(filteredList);
+
+
+        if (filteredList.isEmpty()) {
+            Toast.makeText(this, "Not found", Toast.LENGTH_SHORT).show();
+        } else {
+            barangAdapter.filterList(filteredList);
+        }
+
 
     }
 
@@ -139,6 +183,7 @@ public class DashboardActivity extends AppCompatActivity {
         btn_about = findViewById(R.id.btn_about);
         btn_close = findViewById(R.id.btn_close);
         btn_map = findViewById(R.id.btn_map);
+        searchView = findViewById(R.id.search_barr);
 
         recyclerView = findViewById(R.id.rDashboard);
     }

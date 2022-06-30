@@ -15,7 +15,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -31,6 +30,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScanQRCode"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".DetailBarang"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -47,13 +49,11 @@
             android:exported="false" />
         <activity
             android:name=".AboutMe"
-            android:fitsSystemWindows="true"
-            android:exported="false" />
+            android:exported="false"
+            android:fitsSystemWindows="true" />
         <activity
             android:name=".DashboardActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".TambahBarang"
             android:exported="false" />
@@ -65,9 +65,7 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
-
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -34,7 +34,7 @@ public class MyMap extends FragmentActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_my_map);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLocation();
-        hideNavigationBar();
+
     }
 
     private void hideNavigationBar() {
