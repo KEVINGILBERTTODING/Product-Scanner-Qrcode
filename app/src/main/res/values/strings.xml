@@ -2,4 +2,16 @@
     <string name="app_name">My Scanner</string>
 <string name="google_maps_key">AIzaSyCRww16D9Xqso5BkEBfJUN-OtNh5op96-8</string>
 
+
+    <string name="profilesaya">
+        Hello, my name is Diana Ariance Thamara Yuliana Nafi and I am from Kupang, Indonesia, I have been studying in the field of computer science and I am
+        currently studying in the field of information technology.
+        in the one year, I have developed a mobile application that can be used to scan QR code and get the information from the QR code.
+        Moreover, I have also worked with back-end development using Codeigniter and PHP.
+    </string>
+
+    <string name="copyright">
+        Copyright © 2022 Diana
+    </string>
+
 </resources>

@@ -161,9 +161,6 @@ public class TambahBarang extends AppCompatActivity {
         }
 
 
-
-
-
     }
 
     // Method untuk insert data ke firebase

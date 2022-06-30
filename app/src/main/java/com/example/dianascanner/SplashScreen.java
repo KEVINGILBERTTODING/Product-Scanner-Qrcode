@@ -14,9 +14,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Fungsi untuk menyembunyikan navbar
 
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+       hideNavigationBar();
 
         setContentView(R.layout.activity_splash_screen);
 
@@ -24,10 +22,16 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), ScanQrCode.class));
+                startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                 finish();
             }
         }, 5000L);
 
+    }
+
+    private void hideNavigationBar() {
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 }

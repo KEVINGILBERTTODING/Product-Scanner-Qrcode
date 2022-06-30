@@ -5,84 +5,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wave"
+    android:background="@color/container"
     tools:context=".AboutMe">
+
+
+    <ImageView
+        android:id="@+id/det_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_400sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/frik" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/_16sdp"
+        android:layout_height="match_parent"
+        android:background="@drawable/det_container"
+        android:layout_marginTop="@dimen/_200sdp"
         >
 
-        <ImageButton
-            android:layout_width="@dimen/_13sdp"
-            android:layout_height="@dimen/_13sdp"
-            android:onClick="kembali"
-            android:layout_marginRight="@dimen/_5sdp"
-            android:background="@drawable/ic_btnback" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:fontFamily="@font/popmed"
-            android:textSize="@dimen/_10sdp"
-            android:text="Back"/>
+
+            >
+
+            <TextView
+                android:id="@+id/det_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:fontFamily="@font/popsem"
+                android:text="Diana Ariance Thamara"
+                android:textColor="@color/main"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/det_actor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/det_name"
+                android:layout_marginLeft="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:fontFamily="@font/popsem"
+                android:text="A22.2020.02832"
+                android:textSize="@dimen/_9sdp" />
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_210sdp"
+                android:layout_below="@id/det_actor"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
+                <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/popsem"
+                    android:text="Profile"
+                    android:padding="@dimen/_5sdp"
+                    android:background="@drawable/det_container2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp"
+
+                    />
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+
+
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            >
+
+                            <TextView
+                                android:id="@+id/tv_ancestry"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/popmed"
+                                android:text="@string/profilesaya"
+                                android:textSize="@dimen/_9sdp"
+                                android:layout_marginTop="@dimen/_25sdp"
+
+                                />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                    </androidx.core.widget.NestedScrollView>
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_28sdp"
+        android:background="@drawable/ic_back"
+        android:onClick="btnBack"
+        android:padding="@dimen/_5sdp" />
 
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_140sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/frik"
+        app:shapeAppearanceOverlay="@style/roundedCorners" />
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/container_about"
-        android:layout_marginTop="@dimen/_50sdp">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/_16sdp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/popsem"
-                android:text="ABOUT ME"
-                android:textSize="@dimen/_20sdp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_4sdp"
-                android:background="@color/main" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_40sdp"
-                android:fontFamily="@font/popsem"
-                android:text="Diana Thamara"
-                android:textSize="@dimen/_15sdp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:fontFamily="@font/popsem"
-                android:text="A22.2020.02846"
-                android:textSize="@dimen/_15sdp" />
-
-        </LinearLayout>
-    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/popsem"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/copyright"
+        android:textSize="@dimen/_7sdp" />
 
 
 

@@ -29,6 +29,11 @@
         <entry key="..\:/ScanQRCode/app/src/main/res/drawable/ic_scanner.xml" value="0.35188968335035753" />
         <entry key="..\:/ScanQRCode/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/ScanQRCode/app/src/main/res/layout/activity_splash_screen.xml" value="0.19519927536231885" />
+        <entry key="..\:/scanner/app/src/main/res/drawable/container_header.xml" value="0.2965" />
+        <entry key="..\:/scanner/app/src/main/res/drawable/det_container.xml" value="0.2965" />
+        <entry key="..\:/scanner/app/src/main/res/drawable/det_container2.xml" value="0.2965" />
+        <entry key="..\:/scanner/app/src/main/res/drawable/ic_back.xml" value="0.2965" />
+        <entry key="..\:/scanner/app/src/main/res/layout/activity_about_me.xml" value="0.37128146453089245" />
         <entry key="..\:/scanner/app/src/main/res/layout/activity_dashboard.xml" value="0.3380208333333333" />
         <entry key="..\:/scanner/app/src/main/res/layout/activity_main.xml" value="0.3380208333333333" />
         <entry key="..\:/scanner/app/src/main/res/layout/activity_my_map.xml" value="0.321875" />
