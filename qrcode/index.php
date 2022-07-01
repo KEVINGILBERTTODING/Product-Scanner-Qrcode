@@ -26,9 +26,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $harga = $_POST['harga'];
     $satuan = $_POST['satuan'];
     $jumlah = $_POST['jumlah'];
-    $msql = "insert into data_barang (kode,nama_barang,harga, satuan, jumlah) values (?,?,?,?,?)";
+
+
+    class emp
+    {
+    }
+
+    $image = $_POST['gambar'];
+    $kode = $_POST['kode'];
+
+    $nama_file = $kode . ".png";
+
+    $path = "image_product/" . $nama_file;
+
+    // sesuiakan ip address laptop/pc atau URL server
+    $actualpath = "http://192.168.11.19/android/upload_image/$path";
+
+
+    $msql = "insert into data_barang (kode,nama_barang,harga, satuan, jumlah, image) values (?,?,?,?,?,?)";
     $stat = $conn->prepare($msql);
-    $res = $stat->execute([$kode, $nama, $harga, $satuan, $jumlah]);
+    $res = $stat->execute([$kode, $nama, $harga, $satuan, $jumlah, $nama_file]);
 
     require_once('phpqrcode/qrlib.php');
     $nama = $kode;
@@ -42,9 +59,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 
     if ($res) {
-        $data = ['kode' => $kode, 'nama' => $nama, 'harga' => $harga, 'satuan' => $satuan, 'jumlah' => $jumlah];
+        $data = ['kode' => $kode, 'nama' => $nama, 'harga' => $harga, 'satuan' => $satuan, 'jumlah' => $jumlah, 'image' => $nama_file];
         echo json_encode($data);
     } else {
         echo json_encode(['error' => $stat->errorCode()]);
+    }
+
+    if ($res) {
+        file_put_contents($path, base64_decode($image));
+
+        $response = new emp();
+        $response->success = 1;
+        $response->message = "Nota sudah disimpan";
+        die(json_encode($response));
+    } else {
+        $response = new emp();
+        $response->success = 0;
+        $response->message = "Upload nota gagal";
+        die(json_encode($response));
     }
 }
