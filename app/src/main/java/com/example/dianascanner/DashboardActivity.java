@@ -6,6 +6,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
     private List<BarangModel> barangModelList;
     private InterfaceBarang interfaceBarang;
     SearchView searchView;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,14 @@ public class DashboardActivity extends AppCompatActivity {
 
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
         tampilkanData();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                tampilkanData();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
     }
 
@@ -184,6 +194,7 @@ public class DashboardActivity extends AppCompatActivity {
         btn_close = findViewById(R.id.btn_close);
         btn_map = findViewById(R.id.btn_map);
         searchView = findViewById(R.id.search_barr);
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh);
 
         recyclerView = findViewById(R.id.rDashboard);
     }

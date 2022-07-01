@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/container"
     tools:context=".TransaksiActivity">
 
 
@@ -28,8 +29,8 @@
                 >
                 <ImageButton
                     android:id="@+id/btnBack22"
-                    android:layout_width="@dimen/_13sdp"
-                    android:layout_height="@dimen/_13sdp"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:background="@drawable/ic_btnback" />
 

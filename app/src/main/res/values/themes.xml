@@ -31,4 +31,20 @@
         <item name="cornerSize">@dimen/_10sdp</item>
     </style>
 
+
+    <style name="Theme.no_transparent_status" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/main</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/main</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
 </resources>

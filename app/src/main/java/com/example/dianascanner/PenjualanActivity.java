@@ -3,12 +3,19 @@ package com.example.dianascanner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.example.dianascanner.Model.TransaksiModel;
 import com.example.dianascanner.Utill.DataApi;
 import com.example.dianascanner.Utill.InterfaceTransaksi;
@@ -31,6 +38,8 @@ public class PenjualanActivity extends AppCompatActivity {
     EditText jml_brg;
     EditText satuan_brg;
     String kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu;
+    ImageButton btn_back;
+    ImageView img_qrcode;
 
     Button save;
 
@@ -69,6 +78,26 @@ public class PenjualanActivity extends AppCompatActivity {
         satuan_barg = satuan_brg.getText().toString();
 
 
+        // set image qrcode
+        Glide.with(this)
+                .load("http://192.168.11.19/qrcode/qr/"+kode_brg+".png")
+                .thumbnail(0.5f)
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(img_qrcode);
+
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        img_qrcode.startAnimation(animation);
+
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PenjualanActivity.this, TransaksiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
@@ -97,6 +126,8 @@ public class PenjualanActivity extends AppCompatActivity {
         jml_brg = findViewById(R.id.inJumlahBrg);
         satuan_brg = findViewById(R.id.inSatuanBrg);
         save = findViewById(R.id.btnSave);
+        img_qrcode = findViewById(R.id.img_qrcode);
+        btn_back = findViewById(R.id.btnBack4);
     }
 
     public void simpandata(View view) {
