@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -32,14 +34,15 @@ import retrofit2.Response;
 
 public class PenjualanActivity extends AppCompatActivity {
 
-    EditText kd_brg;
-    EditText nm_brg;
-    EditText hrg_brg;
-    EditText jml_brg;
-    EditText satuan_brg;
+    TextView kd_brg;
+    TextView nm_brg;
+    TextView hrg_brg;
+    TextView jml_brg;
+    TextView satuan_brg;
     String kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu;
     ImageButton btn_back;
-    ImageView img_qrcode;
+    ImageView img_qrcode, imgSuccces;
+    TextView nameProduct;
 
     Button save;
 
@@ -80,13 +83,16 @@ public class PenjualanActivity extends AppCompatActivity {
 
         // set image qrcode
         Glide.with(this)
-                .load("http://192.168.11.19/qrcode/qr/"+kode_brg+".png")
+                .load("http://192.168.11.19/qrcode/image_product/"+kode_brg+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(img_qrcode);
 
+        // Animaasi image product
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
         img_qrcode.startAnimation(animation);
+
+        nameProduct.setText(nama_brg);
 
 
         btn_back.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +134,8 @@ public class PenjualanActivity extends AppCompatActivity {
         save = findViewById(R.id.btnSave);
         img_qrcode = findViewById(R.id.img_qrcode);
         btn_back = findViewById(R.id.btnBack4);
+        imgSuccces = findViewById(R.id.img_success);
+        nameProduct = findViewById(R.id.nama_product);
     }
 
     public void simpandata(View view) {

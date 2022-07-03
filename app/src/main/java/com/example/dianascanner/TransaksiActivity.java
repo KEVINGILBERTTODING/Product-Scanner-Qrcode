@@ -61,7 +61,8 @@ public class TransaksiActivity extends AppCompatActivity  {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                refreshItem();
+                tampilkanData();
+                mSwipeRefreshLayout.setRefreshing(false);
             }
         });
 

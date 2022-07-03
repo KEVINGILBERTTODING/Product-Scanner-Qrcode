@@ -50,7 +50,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_16sdp"
                 android:fontFamily="@font/popsem"
-                android:text="A22.2020.02832"
+                android:text="A22.2020.02846"
                 android:textSize="@dimen/_9sdp" />
 
 

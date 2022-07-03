@@ -94,10 +94,15 @@
                     android:id="@+id/rcylrBarang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     app:spanCount="2"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:shimmer_recycler_item_count="10"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_40sdp"
+                    android:paddingBottom="50dp"
+                    tools:listitem="@layout/list_data_barang"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     />
 
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

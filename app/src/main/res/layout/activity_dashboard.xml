@@ -5,33 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/container"
+    android:background="@color/white"
     tools:context=".DashboardActivity">
 
-<!--    <xyz.sahildave.arclayout.ArcLayout-->
-<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--        xmlns:tools="http://schemas.android.com/tools"-->
-<!--        android:id="@+id/arc_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/_150sdp"-->
-<!--        app:arc_cropCurve="cropConvex"-->
-<!--        app:arc_height="48dp"-->
-<!--        app:arc_position="bottom">-->
 
-<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="@drawable/wave"-->
-<!--            android:orientation="vertical" />-->
-
-<!--    </xyz.sahildave.arclayout.ArcLayout>-->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_130sdp"
         android:background="@drawable/container_header"/>
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/sss"
@@ -363,25 +350,21 @@
             android:textColor="@color/main"
             android:textSize="@dimen/_12sdp" />
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rDashboard"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:shimmer_recycler_item_count="10"
-                app:shimmer_recycler_layout="@layout/list_data_template"
+               tools:listitem="@layout/list_data_barang"
+
                 app:spanCount="2" />
 
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </RelativeLayout>

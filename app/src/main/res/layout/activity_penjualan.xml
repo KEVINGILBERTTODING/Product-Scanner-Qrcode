@@ -11,7 +11,6 @@
 
     <ImageButton
         android:id="@+id/btnBack4"
-        android:visibility="gone"
         android:layout_width="@dimen/_15sdp"
         android:layout_height="@dimen/_15sdp"
         android:layout_alignParentLeft="true"
@@ -31,7 +30,6 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_toRightOf="@id/btnBack4"
         android:textColor="@color/white"
-        android:visibility="gone"
         android:textSize="@dimen/_11sdp" />
 
 
@@ -39,147 +37,159 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/container_about"
-        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_50sdp"
         android:id="@+id/layout_1"
         >
 
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_16sdp"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_qrcode"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:src="@drawable/frik"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+            <ImageView
+                android:id="@+id/img_success"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/success"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/nama_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/popsem"
+                android:textColor="@color/black"
+                android:text="AirPods Pro"
+                android:textSize="@dimen/_13sdp" />
 
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barang ditemukan"
+                android:layout_gravity="center"
+                android:textColor="@color/main"
+                android:textSize="@dimen/_10sdp"
+                android:fontFamily="@font/popsem"
+                />
+
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_margin="@dimen/_16sdp"
-                >
+                android:layout_height="wrap_content"
+                android:id="@+id/inId"
+                android:visibility="gone"
+                />
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/img_qrcode"
-                    android:layout_width="@dimen/_120sdp"
-                    android:layout_height="@dimen/_120sdp"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="center"
-                    android:src="@drawable/frik"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:shapeAppearanceOverlay="@style/roundedCorners" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kode Barang:"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popmed"
+                />
+            <TextView
+                android:id="@+id/inKdBrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:editable="false"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popsem"
+                android:inputType="textPersonName" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
-                    android:src="@drawable/success"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Barang:"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popmed"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Barang ditemukan"
-                    android:layout_gravity="center"
-                    android:textColor="@color/main"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:textSize="@dimen/_13sdp"
-                    android:fontFamily="@font/popsem"
-                    />
+            <TextView
+                android:id="@+id/inNmBrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:editable="false"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popsem"
+                android:inputType="textPersonName" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/inId"
-                    android:visibility="gone"
-                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satuan:"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popmed"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kode Barang:"
-                    android:layout_marginTop="@dimen/_20sdp"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    />
-                <EditText
-                    android:id="@+id/inKdBrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:editable="false"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/inSatuanBrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popsem"
+                android:inputType="textPersonName" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Barang:"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jumlah:"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popmed"
+                />
 
-                <EditText
-                    android:id="@+id/inNmBrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:editable="false"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/inJumlahBrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popsem"
+                android:inputType="textPersonName" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Satuan:"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga:"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popmed"
+                />
 
-                <EditText
-                    android:id="@+id/inSatuanBrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:ems="10"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/inHrgBrg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:textSize="@dimen/_11sdp"
+                android:fontFamily="@font/popsem" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jumlah:"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    />
-
-                <EditText
-                    android:id="@+id/inJumlahBrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:ems="10"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    android:inputType="textPersonName" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Harga:"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed"
-                    />
-
-                <EditText
-                    android:id="@+id/inHrgBrg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:ems="10"
-                    android:textSize="@dimen/_11sdp"
-                    android:fontFamily="@font/popmed" />
-
-
-            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSave"
@@ -191,6 +201,7 @@
                 android:layout_marginRight="@dimen/_16sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:fontFamily="@font/popmed"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:onClick="simpandata"
                 android:text="Simpan"
                 android:textAllCaps="false"
@@ -199,15 +210,12 @@
                 />
 
 
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
     </RelativeLayout>
-
-
-
-
-
-
 
 
 </RelativeLayout>
