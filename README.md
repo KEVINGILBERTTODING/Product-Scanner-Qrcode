@@ -1,6 +1,6 @@
 # MY-SCANNER 	:shamrock:
 
-<h6> Version 1.1 Released date 2022-05-22</h6>
+<h6> V1 Released date 2022-07-02</h6>
 
 <h4><b>MY SCANNER</b> is a simple mobile application for scanning QR Code, with modern design.</h4>
 
