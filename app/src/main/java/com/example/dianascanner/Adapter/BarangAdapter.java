@@ -50,7 +50,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
         holder.hrg_brg.setText(formatRupiah(Double.parseDouble(barangModels.get(position).getHarga())));
 
         Glide.with(context)
-                .load("http://192.168.11.19/qrcode/image_product/"+barangModels.get(position).getKode()+".png")
+                .load("http://adelaide.my.id/image_product/"+barangModels.get(position).getKode()+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.imgBarang);

@@ -83,7 +83,7 @@ public class PenjualanActivity extends AppCompatActivity {
 
         // set image qrcode
         Glide.with(this)
-                .load("http://192.168.11.19/qrcode/image_product/"+kode_brg+".png")
+                .load("http://adelaide.my.id/image_product/"+kode_brg+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(img_qrcode);

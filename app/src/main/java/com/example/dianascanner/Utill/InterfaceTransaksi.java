@@ -13,10 +13,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface InterfaceTransaksi {
-    @GET("qrcode/")
+    @GET("/")
     Call<List<TransaksiModel>> getBarang2();
     @FormUrlEncoded
-    @POST("qrcode/transaksi.php")
+    @POST("transaksi.php")
     Call<TransaksiModel> simpanPenjualan(@Field("kode") String kode,
                                  @Field("jumlah") String jumlah);
 

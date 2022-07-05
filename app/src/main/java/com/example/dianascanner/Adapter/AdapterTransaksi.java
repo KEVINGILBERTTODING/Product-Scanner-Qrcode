@@ -52,7 +52,7 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
         holder.satuan_brg2.setText(transaksiModels.get(position).getSatuan());
 
         Glide.with(context)
-                .load("http://192.168.11.19/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
+                .load("http://adelaide.my.id/qr/"+transaksiModels.get(position).getKode()+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.img_brg2);

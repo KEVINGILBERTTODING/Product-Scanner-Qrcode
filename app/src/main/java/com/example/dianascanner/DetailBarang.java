@@ -41,7 +41,7 @@ public class DetailBarang extends AppCompatActivity {
         hrg_brg.setText(harga);
 
         Glide.with(this)
-                .load("http://192.168.11.19/qrcode/image_product/"+kode+".png")
+                .load("http://adelaide.my.id/image_product/"+kode+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imgBarang);
