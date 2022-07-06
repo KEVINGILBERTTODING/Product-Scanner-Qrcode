@@ -39,7 +39,11 @@ public class PenjualanActivity extends AppCompatActivity {
     TextView hrg_brg;
     TextView jml_brg;
     TextView satuan_brg;
-    String kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu;
+    EditText jumlah_penjualan;
+    Integer total, jumlahPenjualan, totalBarang;
+    String kode_brg, nama_brg, harga_brg, jumlah_brg, satuan_barg, tanggal, waktu, jmlPenjualan, stokBarang;
+    String stokFinal;
+    TextView tv_total, tvTotal2;
     ImageButton btn_back;
     ImageView img_qrcode, imgSuccces;
     TextView nameProduct;
@@ -103,6 +107,64 @@ public class PenjualanActivity extends AppCompatActivity {
             }
         });
 
+        // Menghitung total harga
+        jumlah_penjualan.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+
+                // Jika edittetxt fokus
+                if (hasFocus){
+                    jml_brg.setText(intent.getStringExtra("jml_brg2"));
+
+                } else {
+
+                    if (jumlah_penjualan.getText().toString().equals("")){
+                        total = 0;
+                        totalBarang = 0;
+                    }
+
+
+                    else {
+
+                        jumlahPenjualan = Integer.parseInt(jumlah_penjualan.getText().toString());
+                        totalBarang = Integer.parseInt(jml_brg.getText().toString())  - jumlahPenjualan;
+                        total = jumlahPenjualan * Integer.parseInt(hrg_brg.getText().toString());
+
+                        if(Integer.parseInt(jml_brg.getText().toString()) < jumlahPenjualan )  {
+                            Toast.makeText(PenjualanActivity.this, "Jumlah barang melebihi stok", Toast.LENGTH_LONG).show();
+                            jumlah_penjualan.setText("Stok tidak mencukupi");
+                            jumlah_penjualan.setError("Jumlah barang melebihi stok");
+                            jml_brg.setText(intent.getStringExtra("jml_brg2"));
+                            save.setClickable(false);
+                            tv_total.setText("Jumlah melebihi stok");
+                            tvTotal2.setVisibility(View.GONE);
+
+                        }
+                        else {
+                            save.setClickable(true);
+                            tv_total.setText(String.valueOf(total));
+                            jml_brg.setText(String.valueOf(totalBarang));
+                            stokBarang = jml_brg.getText().toString();
+                            tvTotal2.setText(String.valueOf(totalBarang));
+                            tvTotal2.setVisibility(View.GONE);
+                            stokFinal = tvTotal2.getText().toString();
+
+                        }
+
+
+
+                    }
+
+                }
+            }
+        });
+
+
+
+
 
 
 
@@ -135,6 +197,7 @@ public class PenjualanActivity extends AppCompatActivity {
         img_qrcode = findViewById(R.id.img_qrcode);
         btn_back = findViewById(R.id.btnBack4);
         imgSuccces = findViewById(R.id.img_success);
+        tv_total = findViewById(R.id.tv_total);
         nameProduct = findViewById(R.id.nama_product);
     }
 
