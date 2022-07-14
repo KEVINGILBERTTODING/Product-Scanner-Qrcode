@@ -1,4 +1,4 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;

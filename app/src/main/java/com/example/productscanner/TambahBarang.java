@@ -1,4 +1,4 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,34 +13,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.example.dianascanner.Model.BarangModel;
-import com.example.dianascanner.Utill.AppController;
-import com.example.dianascanner.Utill.DataApi;
-import com.example.dianascanner.Utill.InterfaceBarang;
-import com.example.dianascanner.Utill.ServerAPI;
+import com.example.productscanner.Model.BarangModel;
+import com.example.productscanner.Utill.DataApi;
+import com.example.productscanner.Utill.InterfaceBarang;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kosalgeek.android.photoutil.GalleryPhoto;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -167,12 +156,12 @@ public class TambahBarang extends AppCompatActivity {
 
 
     private void tambahData(String kode, String nama, String harga, String jumlah, String satuan) {
-        String barang = refBarang.push().getKey();
-        refBarang.child(barang).child("kode").setValue(kode);
-        refBarang.child(barang).child("nama").setValue(nama);
-        refBarang.child(barang).child("harga").setValue(harga);
-        refBarang.child(barang).child("jumlah").setValue(jumlah);
-        refBarang.child(barang).child("satuan").setValue(satuan);
+        String kdbrg = kode;
+        refBarang.child(kdbrg).child("kode").setValue(kode);
+        refBarang.child(kdbrg).child("nama").setValue(nama);
+        refBarang.child(kdbrg).child("harga").setValue(harga);
+        refBarang.child(kdbrg).child("jumlah").setValue(jumlah);
+        refBarang.child(kdbrg).child("satuan").setValue(satuan);
         Toast.makeText(TambahBarang.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
     }
 

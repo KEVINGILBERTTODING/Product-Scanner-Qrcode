@@ -1,4 +1,4 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
 import org.junit.Test;
 

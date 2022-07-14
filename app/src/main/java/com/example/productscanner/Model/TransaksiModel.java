@@ -1,6 +1,6 @@
-package com.example.dianascanner.Model;
+package com.example.productscanner.Model;
 
-import com.example.dianascanner.Utill.ServerAPI;
+import com.example.productscanner.Utill.ServerAPI;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;

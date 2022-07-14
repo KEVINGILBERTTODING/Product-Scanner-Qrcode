@@ -1,4 +1,4 @@
-package com.example.dianascanner.Utill;
+package com.example.productscanner.Utill;
 
 public class ServerAPI {
     public static String Base_url = "http://192.168.11.92/";

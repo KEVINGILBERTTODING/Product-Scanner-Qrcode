@@ -1,18 +1,16 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
-import static com.example.dianascanner.Utill.ServerAPI.Base_url;
+import static com.example.productscanner.Utill.ServerAPI.Base_url;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -22,9 +20,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.example.dianascanner.Model.TransaksiModel;
-import com.example.dianascanner.Utill.DataApi;
-import com.example.dianascanner.Utill.InterfaceTransaksi;
+import com.example.productscanner.Model.TransaksiModel;
+import com.example.productscanner.Utill.DataApi;
+import com.example.productscanner.Utill.InterfaceTransaksi;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

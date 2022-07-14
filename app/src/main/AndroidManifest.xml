@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dianascanner">
+    package="com.example.productscanner">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -21,18 +21,21 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name=".Utill.AppController"
+        android:name="com.example.productscanner.Utill.AppController"
         android:allowBackup="true"
         android:allowClearUserData="true"
-        android:icon="@drawable/ic_icon"
         android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScanQRCode"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DetailBarang"
+            android:name="com.example.productscanner.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.productscanner.DetailBarang"
             android:exported="false" />
 
         <meta-data
@@ -40,36 +43,36 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MyMap"
+            android:name="com.example.productscanner.MyMap"
             android:exported="false" />
         <activity
-            android:name=".PenjualanActivity"
-            android:theme="@style/Theme.no_transparent_status"
-            android:exported="false" />
-        <activity
-            android:name=".TransaksiActivity"
-            android:theme="@style/Theme.no_transparent_status"
-            android:exported="false" />
-        <activity
-            android:name=".AboutMe"
+            android:name="com.example.productscanner.PenjualanActivity"
             android:exported="false"
-            android:theme="@style/Theme.no_transparent_status"
-            android:fitsSystemWindows="true" />
+            android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name=".DashboardActivity"
-            android:exported="true"></activity>
+            android:name="com.example.productscanner.TransaksiActivity"
+            android:exported="false"
+            android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name=".TambahBarang"
-            android:theme="@style/Theme.no_transparent_status"
-            android:exported="false" />
+            android:name="com.example.productscanner.AboutMe"
+            android:exported="false"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name=".MediaBarcode"
-            android:exported="false" />
-        <activity
-            android:name=".ScanQrCode"
+            android:name="com.example.productscanner.DashboardActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.productscanner.TambahBarang"
+            android:exported="false"
+            android:theme="@style/Theme.no_transparent_status" />
+        <activity
+            android:name="com.example.productscanner.MediaBarcode"
+            android:exported="false" />
+        <activity
+            android:name="com.example.productscanner.ScanQrCode"
+            android:exported="true" />
+        <activity
+            android:name="com.example.productscanner.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,9 +81,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.no_transparent_status"
-            android:exported="true" />
+            android:name="com.example.productscanner.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.no_transparent_status" />
     </application>
 
 </manifest>

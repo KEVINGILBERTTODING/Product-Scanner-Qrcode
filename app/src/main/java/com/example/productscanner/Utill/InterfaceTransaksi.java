@@ -1,6 +1,6 @@
-package com.example.dianascanner.Utill;
+package com.example.productscanner.Utill;
 
-import com.example.dianascanner.Model.TransaksiModel;
+import com.example.productscanner.Model.TransaksiModel;
 
 import java.util.List;
 

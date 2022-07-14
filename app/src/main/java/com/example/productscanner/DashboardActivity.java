@@ -1,4 +1,4 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.dianascanner.Adapter.BarangAdapter;
-import com.example.dianascanner.Model.BarangModel;
-import com.example.dianascanner.Utill.DataApi;
-import com.example.dianascanner.Utill.InterfaceBarang;
+import com.example.productscanner.Adapter.BarangAdapter;
+import com.example.productscanner.Model.BarangModel;
+import com.example.productscanner.Utill.DataApi;
+import com.example.productscanner.Utill.InterfaceBarang;
 
 import java.util.ArrayList;
 import java.util.List;

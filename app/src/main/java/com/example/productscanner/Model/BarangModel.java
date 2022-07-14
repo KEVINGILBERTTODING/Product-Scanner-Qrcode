@@ -1,4 +1,4 @@
-package com.example.dianascanner.Model;
+package com.example.productscanner.Model;
 
 import com.google.gson.annotations.SerializedName;
 

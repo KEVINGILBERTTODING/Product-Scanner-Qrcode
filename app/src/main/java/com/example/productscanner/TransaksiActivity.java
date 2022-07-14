@@ -1,4 +1,4 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -12,10 +12,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.dianascanner.Adapter.AdapterTransaksi;
-import com.example.dianascanner.Model.TransaksiModel;
-import com.example.dianascanner.Utill.DataApi;
-import com.example.dianascanner.Utill.InterfaceTransaksi;
+import com.example.productscanner.Adapter.AdapterTransaksi;
+import com.example.productscanner.Model.TransaksiModel;
+import com.example.productscanner.Utill.DataApi;
+import com.example.productscanner.Utill.InterfaceTransaksi;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.todkars.shimmer.ShimmerRecyclerView;
 

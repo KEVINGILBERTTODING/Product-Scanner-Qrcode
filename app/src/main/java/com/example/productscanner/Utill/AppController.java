@@ -1,4 +1,4 @@
-package com.example.dianascanner.Utill;
+package com.example.productscanner.Utill;
 
 import android.app.Application;
 import android.text.TextUtils;

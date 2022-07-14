@@ -1,6 +1,6 @@
-package com.example.dianascanner;
+package com.example.productscanner;
 
-import static com.example.dianascanner.Utill.ServerAPI.Base_url;
+import static com.example.productscanner.Utill.ServerAPI.Base_url;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,7 +1,6 @@
-package com.example.dianascanner.Adapter;
+package com.example.productscanner.Adapter;
 
-import static com.example.dianascanner.Utill.ServerAPI.Base_url;
-import static com.example.dianascanner.Utill.ServerAPI.URL;
+import static com.example.productscanner.Utill.ServerAPI.Base_url;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,14 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.example.dianascanner.Model.TransaksiModel;
-import com.example.dianascanner.PenjualanActivity;
-import com.example.dianascanner.R;
+import com.example.productscanner.Model.TransaksiModel;
+import com.example.productscanner.PenjualanActivity;
+import com.example.productscanner.R;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyViewHolder> {
     Context context;

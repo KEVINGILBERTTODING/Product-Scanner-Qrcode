@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "754825590272",
-    "firebase_url": "https://diana-scanner-default-rtdb.firebaseio.com",
-    "project_id": "diana-scanner",
-    "storage_bucket": "diana-scanner.appspot.com"
+    "project_number": "739169127193",
+    "firebase_url": "https://product-scanner-976a7-default-rtdb.firebaseio.com",
+    "project_id": "product-scanner-976a7",
+    "storage_bucket": "product-scanner-976a7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:754825590272:android:a6adec0869de91c69dcae5",
+        "mobilesdk_app_id": "1:739169127193:android:0a780305fc0b67c1451388",
         "android_client_info": {
-          "package_name": "com.example.dianascanner"
+          "package_name": "com.example.productscanner"
         }
       },
       "oauth_client": [
         {
-          "client_id": "754825590272-joufba5mlf8qjjtlun48hfke9ge8f36j.apps.googleusercontent.com",
+          "client_id": "739169127193-q0ps9ib8ag34gs9m5ckiq0dp3gogk44m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dianascanner",
-            "certificate_hash": "abfe774ba4f96c77e732ec11dcbccea049f88eb1"
+            "package_name": "com.example.productscanner",
+            "certificate_hash": "a8a8d01c9432c5ad57d64d472619b3e9bfb5c17e"
           }
         },
         {
-          "client_id": "754825590272-7jl261strt5sm9c4mj9vj3sidpt1bsg4.apps.googleusercontent.com",
+          "client_id": "739169127193-0dp14j7ob360n2hn0vmhpo1kdjuhujqu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDC2r4BIblw2KAL_f7-Bj_RMB7BNvbnoPc"
+          "current_key": "AIzaSyDbhuSwexcBzCp1E3fMonQHYHkcIyW1LSo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "754825590272-7jl261strt5sm9c4mj9vj3sidpt1bsg4.apps.googleusercontent.com",
+              "client_id": "739169127193-0dp14j7ob360n2hn0vmhpo1kdjuhujqu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
