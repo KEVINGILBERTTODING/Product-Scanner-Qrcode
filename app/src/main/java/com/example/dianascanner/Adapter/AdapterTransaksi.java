@@ -1,5 +1,8 @@
 package com.example.dianascanner.Adapter;
 
+import static com.example.dianascanner.Utill.ServerAPI.Base_url;
+import static com.example.dianascanner.Utill.ServerAPI.URL;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -47,12 +50,12 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
 
         holder.kd_brg2.setText(transaksiModels.get(position).getKode());
         holder.nm_brg2.setText(transaksiModels.get(position).getNama());
-        holder.hrg_brg2.setText(formatRupiah(Double.parseDouble(transaksiModels.get(position).getHarga())));
+        holder.hrg_brg2.setText(transaksiModels.get(position).getHarga());
         holder.jml_brg2.setText(transaksiModels.get(position).getJumlah());
         holder.satuan_brg2.setText(transaksiModels.get(position).getSatuan());
 
         Glide.with(context)
-                .load("http://192.168.11.19/qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
+                .load(Base_url + "qrcode/qr/"+transaksiModels.get(position).getKode()+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.img_brg2);
@@ -109,11 +112,11 @@ public class AdapterTransaksi extends RecyclerView.Adapter<AdapterTransaksi.MyVi
         }
     }
 
-    private String formatRupiah(Double number) {
-        Locale localeID = new Locale("in", "ID");
-        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
-        return formatRupiah.format(number);
-
-    }
+//    private String formatRupiah(Double number) {
+//        Locale localeID = new Locale("in", "ID");
+//        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+//        return formatRupiah.format(number);
+//
+//    }
 }
 

@@ -1,5 +1,7 @@
 package com.example.dianascanner;
 
+import static com.example.dianascanner.Utill.ServerAPI.Base_url;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -87,7 +89,7 @@ public class MediaBarcode extends AppCompatActivity implements ZXingScannerView.
    // Method untuk memanggil data barang
     
     private void getDataBarang(String result){
-        String url="http://172.20.10.3/qrcode/cari_qrcode.php?kode="+result;
+        String url= Base_url + "qrcode/cari_qrcode.php?kode="+result;
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.PUT,url,null,
                 new Response.Listener<JSONArray>() {
                     @Override

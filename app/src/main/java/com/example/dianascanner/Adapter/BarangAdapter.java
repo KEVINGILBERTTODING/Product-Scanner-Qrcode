@@ -1,5 +1,8 @@
 package com.example.dianascanner.Adapter;
 
+import static com.example.dianascanner.Utill.ServerAPI.Base_url;
+import static com.example.dianascanner.Utill.ServerAPI.URL;
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -50,7 +53,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.MyViewHold
         holder.hrg_brg.setText(formatRupiah(Double.parseDouble(barangModels.get(position).getHarga())));
 
         Glide.with(context)
-                .load("http://192.168.11.19/qrcode/image_product/"+barangModels.get(position).getKode()+".png")
+                .load( Base_url + "qrcode/image_product/"+barangModels.get(position).getKode()+".png")
                 .thumbnail(0.5f)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.imgBarang);
