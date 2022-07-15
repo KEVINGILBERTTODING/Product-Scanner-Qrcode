@@ -147,15 +147,21 @@
         android:src="@drawable/frik"
         app:shapeAppearanceOverlay="@style/roundedCorners" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/popsem"
-        android:layout_alignParentBottom="true"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        app:cornerRadius="@dimen/_10sdp"
+        android:text="Log Out"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/copyright"
-        android:textSize="@dimen/_7sdp" />
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="@font/popmed"
+        />
 
 
 
