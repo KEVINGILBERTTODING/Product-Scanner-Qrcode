@@ -20,335 +20,334 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/sss"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/sss"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_16sdp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvt_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:fontFamily="@font/popmed"
-                android:text="Halo, Diana Thamara"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_9sdp" />
+                android:layout_marginRight="@dimen/_16sdp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvt_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvt_1"
-                android:fontFamily="@font/popsem"
-                android:text="Scan barcode untuk mengambil data"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_11sdp" />
+                <TextView
+                    android:id="@+id/tvt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/popmed"
+                    android:text="Halo, Diana Thamara"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9sdp" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_barr"
+                <TextView
+                    android:id="@+id/tvt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvt_1"
+                    android:fontFamily="@font/popsem"
+                    android:text="Scan barcode untuk mengambil data"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11sdp" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_barr"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_below="@+id/tvTitle2"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/content3"
+                    android:focusable="false"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@drawable/content3"
+                    app:queryHint="Cari barang..."
+                    app:theme="@style/AppSearchView" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_below="@+id/tvTitle2"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/content3"
-                android:focusable="false"
-                app:iconifiedByDefault="false"
-                app:queryBackground="@drawable/content3"
-                app:queryHint="Cari barang..."
-                app:theme="@style/AppSearchView" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginRight="@dimen/_16sdp">
-
-            <TextView
-                android:id="@+id/tvt_3"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/popsem"
-                android:text="Menu utama"
-                android:textSize="@dimen/_12sdp" />
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_16sdp">
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tvt_3"
-                android:scrollbars="none">
-
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvt_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:orientation="horizontal">
+                    android:fontFamily="@font/popsem"
+                    android:text="Menu utama"
+                    android:textSize="@dimen/_12sdp" />
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvt_3"
+                    android:scrollbars="none">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
 
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/_60sdp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_15sdp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="@dimen/_10sdp"
-                            app:cardUseCompatPadding="true">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_60sdp"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_5sdp">
+                                android:layout_marginRight="@dimen/_15sdp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageButton
-                                    android:id="@+id/btn_barang"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/_40sdp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/packaging" />
-
-
-                                <TextView
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:fontFamily="@font/popmed"
-                                    android:text="Barang"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_8sdp" />
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdp">
+
+                                    <ImageButton
+                                        android:id="@+id/btn_barang"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/packaging" />
 
 
-                            </LinearLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/popmed"
+                                        android:text="Barang"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_8sdp" />
 
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/_60sdp"
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_15sdp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="@dimen/_10sdp"
-                            app:cardUseCompatPadding="true">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_60sdp"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_5sdp">
+                                android:layout_marginRight="@dimen/_15sdp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageButton
-                                    android:id="@+id/btn_transaksi"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/_40sdp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/transaction" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:fontFamily="@font/popmed"
-                                    android:text="Transaksi"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_8sdp" />
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdp">
+
+                                    <ImageButton
+                                        android:id="@+id/btn_transaksi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/transaction" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/popmed"
+                                        android:text="Transaksi"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_8sdp" />
 
 
-                            </LinearLayout>
+                                </LinearLayout>
 
-                        </androidx.cardview.widget.CardView>
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.cardview.widget.CardView>
 
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/_60sdp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_15sdp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="@dimen/_10sdp"
-                            app:cardUseCompatPadding="true">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_60sdp"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_5sdp">
+                                android:layout_marginRight="@dimen/_15sdp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageButton
-                                    android:id="@+id/btn_about"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/_40sdp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/woman" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:fontFamily="@font/popmed"
-                                    android:text="About"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_8sdp" />
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdp">
+
+                                    <ImageButton
+                                        android:id="@+id/btn_about"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/woman" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/popmed"
+                                        android:text="About"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_8sdp" />
 
 
-                            </LinearLayout>
+                                </LinearLayout>
 
-                        </androidx.cardview.widget.CardView>
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.cardview.widget.CardView>
 
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/_60sdp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_15sdp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="@dimen/_10sdp"
-                            app:cardUseCompatPadding="true">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_60sdp"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_5sdp">
+                                android:layout_marginRight="@dimen/_15sdp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageButton
-                                    android:id="@+id/btn_map"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/_40sdp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/map" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:fontFamily="@font/popmed"
-                                    android:text="Location"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_8sdp" />
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdp">
 
-                            </LinearLayout>
+                                    <ImageButton
+                                        android:id="@+id/btn_map"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/map" />
 
-                        </androidx.cardview.widget.CardView>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/popmed"
+                                        android:text="Location"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_8sdp" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
 
 
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/_60sdp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_15sdp"
-                            app:cardBackgroundColor="@color/white"
-                            app:cardCornerRadius="@dimen/_10sdp"
-                            app:cardUseCompatPadding="true">
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="@dimen/_60sdp"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="@dimen/_5sdp">
+                                android:layout_marginRight="@dimen/_15sdp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardUseCompatPadding="true">
 
-                                <ImageButton
-                                    android:id="@+id/btn_close"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/_40sdp"
-                                    android:layout_gravity="center"
-                                    android:background="@drawable/logout" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:fontFamily="@font/popmed"
-                                    android:text="Keluar"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/black"
-                                    android:textSize="@dimen/_8sdp" />
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_5sdp">
 
-                            </LinearLayout>
+                                    <ImageButton
+                                        android:id="@+id/btn_close"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="@dimen/_40sdp"
+                                        android:layout_gravity="center"
+                                        android:background="@drawable/logout" />
 
-                        </androidx.cardview.widget.CardView>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:fontFamily="@font/popmed"
+                                        android:text="Keluar"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_8sdp" />
 
-                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </LinearLayout>
 
-                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
 
-            </HorizontalScrollView>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </RelativeLayout>
+                    </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:fontFamily="@font/popsem"
-            android:text="Daftar Barang"
-            android:textColor="@color/main"
-            android:textSize="@dimen/_12sdp" />
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/popsem"
+                android:text="Daftar Barang"
+                android:textColor="@color/main"
+                android:textSize="@dimen/_12sdp" />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -356,15 +355,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-               tools:listitem="@layout/list_data_barang"
+                app:spanCount="2"
 
-                app:spanCount="2" />
-
-
+                tools:listitem="@layout/list_data_barang" />
 
 
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </RelativeLayout>

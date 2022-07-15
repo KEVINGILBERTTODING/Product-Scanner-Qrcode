@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.productscanner.Adapter.BarangAdapter;
@@ -36,6 +38,7 @@ public class DashboardActivity extends AppCompatActivity {
     private InterfaceBarang interfaceBarang;
     SearchView searchView;
     SwipeRefreshLayout swipeRefreshLayout;
+    TextView tv_username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +113,27 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        checkuserstatus();
+    }
+
+    private void checkuserstatus() {
+
+        SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
+        Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
+        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+        if (counter){
+            tv_username.setText(username);
+        }
+        else{
+            startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
+            finish();
+        }
+
+
+    }
     private void hideNavbar() {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
@@ -195,6 +219,7 @@ public class DashboardActivity extends AppCompatActivity {
         btn_map = findViewById(R.id.btn_map);
         searchView = findViewById(R.id.search_barr);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
+        tv_username = findViewById(R.id.tvt_1);
 
         recyclerView = findViewById(R.id.rDashboard);
     }

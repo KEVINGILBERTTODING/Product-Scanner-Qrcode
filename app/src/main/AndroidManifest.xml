@@ -21,7 +21,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:name="com.example.productscanner.Utill.AppController"
+        android:name=".Utill.AppController"
         android:allowBackup="true"
         android:allowClearUserData="true"
         android:hardwareAccelerated="true"
@@ -32,10 +32,13 @@
         android:theme="@style/Theme.ScanQRCode"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.example.productscanner.LoginActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.productscanner.DetailBarang"
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailBarang"
             android:exported="false" />
 
         <meta-data
@@ -43,36 +46,36 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.example.productscanner.MyMap"
+            android:name=".MyMap"
             android:exported="false" />
         <activity
-            android:name="com.example.productscanner.PenjualanActivity"
+            android:name=".PenjualanActivity"
             android:exported="false"
             android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name="com.example.productscanner.TransaksiActivity"
+            android:name=".TransaksiActivity"
             android:exported="false"
             android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name="com.example.productscanner.AboutMe"
+            android:name=".AboutMe"
             android:exported="false"
             android:fitsSystemWindows="true"
             android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name="com.example.productscanner.DashboardActivity"
+            android:name=".DashboardActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.productscanner.TambahBarang"
+            android:name=".TambahBarang"
             android:exported="false"
             android:theme="@style/Theme.no_transparent_status" />
         <activity
-            android:name="com.example.productscanner.MediaBarcode"
+            android:name=".MediaBarcode"
             android:exported="false" />
         <activity
-            android:name="com.example.productscanner.ScanQrCode"
+            android:name=".ScanQrCode"
             android:exported="true" />
         <activity
-            android:name="com.example.productscanner.SplashScreen"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -81,7 +84,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.productscanner.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.no_transparent_status" />
     </application>
