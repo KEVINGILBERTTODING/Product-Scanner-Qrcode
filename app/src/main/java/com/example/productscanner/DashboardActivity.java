@@ -62,6 +62,8 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     private void tampilkanData() {
@@ -125,7 +127,7 @@ public class DashboardActivity extends AppCompatActivity {
         Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
         String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
         if (counter){
-            tv_username.setText(username);
+            tv_username.setText("Welcome, "+username);
         }
         else{
             startActivity(new Intent(DashboardActivity.this,LoginActivity.class));
@@ -198,24 +200,13 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
 
-        btn_close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(DashboardActivity.this);
-                builder.setTitle("Keluar Aplikasi");
-                builder.setMessage("Apakah anda yakin ingin keluar dari aplikasi ini?");
-                builder.setPositiveButton("Ya", (dialog, which) -> finish());
-                builder.setNegativeButton("Tidak", (dialog, which) -> dialog.dismiss());
-                builder.show();
-            }
-        });
+
     }
 
     private void initilize() {
         btn_barang = findViewById(R.id.btn_barang);
         btn_transaksi = findViewById(R.id.btn_transaksi);
         btn_about = findViewById(R.id.btn_about);
-        btn_close = findViewById(R.id.btn_close);
         btn_map = findViewById(R.id.btn_map);
         searchView = findViewById(R.id.search_barr);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);

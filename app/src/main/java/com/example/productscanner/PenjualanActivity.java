@@ -5,6 +5,7 @@ import static com.example.productscanner.Utill.ServerAPI.Base_url;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -50,6 +51,7 @@ public class PenjualanActivity extends AppCompatActivity {
     ImageView img_qrcode, imgSuccces;
     TextView nameProduct;
 
+
     Button save;
 
     InterfaceTransaksi interfaceTransaksi;
@@ -57,6 +59,7 @@ public class PenjualanActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference refPenjualan = database.getReference("Penjualan");
     DatabaseReference refBarang = database.getReference("Barang");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class PenjualanActivity extends AppCompatActivity {
         hrg_brg.setText(intent.getStringExtra("hrg_brg2"));
         jml_brg.setText(intent.getStringExtra("jml_brg2"));
         satuan_brg.setText(intent.getStringExtra("satuan_brg2"));
+//        userName = username;
 
         getDateTime();
 
@@ -240,6 +244,12 @@ public class PenjualanActivity extends AppCompatActivity {
     }
 
     public void simpandata(View view) {
+
+        // Sharedpreferences get username
+        SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
+        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+
+
         DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, jumlah_brg).enqueue(new Callback<TransaksiModel>() {
             @Override
             public void onResponse(Call<TransaksiModel> call, Response<TransaksiModel> response) {
@@ -247,7 +257,7 @@ public class PenjualanActivity extends AppCompatActivity {
 
 
                     // Memanggil method simpan ke firebase
-                    simpanPenjualan(kode_brg, nama_brg, harga_brg, totalBarang, jumlahPenjualan, total, satuan_barg, tanggal, waktu);
+                    simpanPenjualan(kode_brg, nama_brg, harga_brg, totalBarang, jumlahPenjualan, total, satuan_barg, tanggal, waktu, username);
 
                     refBarang.child(kode_brg).child("jumlah").setValue(stokBarang);
 
@@ -265,21 +275,28 @@ public class PenjualanActivity extends AppCompatActivity {
         });
 
     }
+    private void checkuserstatus() {
+
+
+
+
+    }
 
 
      // Method simpan data ke dalam firebase
 
-    private void simpanPenjualan(String kode_brg, String nama_brg, String harga_brg, Integer total, Integer jumlah_penjualan, Integer totalPembelian, String satuan_barg,  String tanggal, String waktu) {
+    private void simpanPenjualan(String kode_brg, String nama_brg, String harga_brg, Integer total, Integer jumlah_penjualan, Integer totalPembelian, String satuan_barg,  String tanggal, String waktu, String nama_pembeli) {
         String penjualan = refPenjualan.push().getKey();
-        refPenjualan.child(penjualan).child("kode").setValue(kode_brg);
-        refPenjualan.child(penjualan).child("nama").setValue(nama_brg);
-        refPenjualan.child(penjualan).child("harga").setValue(harga_brg);
+        refPenjualan.child(penjualan).child("Kode").setValue(kode_brg);
+        refPenjualan.child(penjualan).child("Nama Barang").setValue(nama_brg);
+        refPenjualan.child(penjualan).child("Harga").setValue(harga_brg);
         refPenjualan.child(penjualan).child("Stok").setValue(total);
         refPenjualan.child(penjualan).child("Jumlah Penjualan").setValue(jumlah_penjualan);
         refPenjualan.child(penjualan).child("Total Pembelian").setValue(totalPembelian);
         refPenjualan.child(penjualan).child("satuan").setValue(satuan_barg);
         refPenjualan.child(penjualan).child("tanggal").setValue(tanggal);
         refPenjualan.child(penjualan).child("waktu").setValue(waktu);
+        refPenjualan.child(penjualan).child("Nama Pembeli").setValue(nama_pembeli);
         Toast.makeText(PenjualanActivity.this, "Berhasil menambahkan data ke firebase", Toast.LENGTH_LONG).show();
     }
 }
