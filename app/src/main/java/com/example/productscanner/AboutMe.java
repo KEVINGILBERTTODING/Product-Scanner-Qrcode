@@ -20,6 +20,7 @@ public class AboutMe extends AppCompatActivity {
 
     ImageView imgDetail;
     SharedPreferences sharedpreferences;
+    Button updatePassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class AboutMe extends AppCompatActivity {
         setContentView(R.layout.activity_about_me);
         imgDetail   = findViewById(R.id.det_image);
         Button btnLogout = findViewById(R.id.btn_logout);
+        updatePassword = findViewById(R.id.btn_udpate_password);
 
         hideNavigationBar();
 
@@ -48,6 +50,9 @@ public class AboutMe extends AppCompatActivity {
                 editor.apply();
                 finish();
             }
+        });
+        updatePassword.setOnClickListener(view ->{
+            startActivity(new Intent(AboutMe.this, UpdatePassword.class));
         });
 
     }
