@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_400sdp"
         android:scaleType="fitXY"
-        android:src="@drawable/frik" />
+        android:src="@color/main" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             >
 
             <TextView
-                android:id="@+id/det_name"
+                android:id="@+id/tv_det_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_150sdp"
@@ -41,24 +41,24 @@
                 android:textColor="@color/main"
                 android:textSize="@dimen/_12sdp" />
 
-            <TextView
-                android:id="@+id/det_actor"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/det_name"
+                android:layout_below="@id/tv_det_username"
                 android:layout_marginLeft="@dimen/_150sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_16sdp"
                 android:fontFamily="@font/popsem"
-                android:text="A22.2020.02846"
+                app:elevation="@dimen/_5sdp"
+                android:text="Edit Profile"
+                android:textAllCaps="false"
                 android:textSize="@dimen/_9sdp" />
-
-
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_210sdp"
-                android:layout_below="@id/det_actor"
+                android:layout_below="@id/btn_edit_profile"
                 android:layout_marginLeft="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:layout_marginRight="@dimen/_16sdp"
@@ -144,7 +144,7 @@
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_140sdp"
         android:scaleType="fitXY"
-        android:src="@drawable/frik"
+        android:src="@color/main"
         app:shapeAppearanceOverlay="@style/roundedCorners" />
 
     <androidx.appcompat.widget.LinearLayoutCompat

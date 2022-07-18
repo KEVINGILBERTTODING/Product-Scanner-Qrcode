@@ -275,12 +275,7 @@ public class PenjualanActivity extends AppCompatActivity {
         });
 
     }
-    private void checkuserstatus() {
 
-
-
-
-    }
 
 
      // Method simpan data ke dalam firebase

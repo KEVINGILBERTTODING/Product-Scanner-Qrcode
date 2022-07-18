@@ -32,6 +32,9 @@
         android:theme="@style/Theme.ScanQRCode"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".UpdatePassword"
             android:exported="false" />
         <activity

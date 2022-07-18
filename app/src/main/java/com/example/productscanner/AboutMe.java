@@ -20,7 +20,7 @@ public class AboutMe extends AppCompatActivity {
 
     ImageView imgDetail;
     SharedPreferences sharedpreferences;
-    Button updatePassword;
+    Button updatePassword, btn_edit_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class AboutMe extends AppCompatActivity {
         setContentView(R.layout.activity_about_me);
         imgDetail   = findViewById(R.id.det_image);
         Button btnLogout = findViewById(R.id.btn_logout);
+        btn_edit_profile = findViewById(R.id.btn_edit_profile);
         updatePassword = findViewById(R.id.btn_udpate_password);
 
         hideNavigationBar();
@@ -55,6 +56,10 @@ public class AboutMe extends AppCompatActivity {
             startActivity(new Intent(AboutMe.this, UpdatePassword.class));
         });
 
+        btn_edit_profile.setOnClickListener(view -> {
+            startActivity(new Intent(AboutMe.this, EditProfile.class));
+        });
+
     }
 
     private void hideNavigationBar() {
@@ -71,4 +76,5 @@ public class AboutMe extends AppCompatActivity {
     public void btnBack(View view) {
         startActivity(new Intent(AboutMe.this, DashboardActivity.class));
     }
+
 }
