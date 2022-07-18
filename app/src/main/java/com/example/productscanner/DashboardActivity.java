@@ -1,5 +1,7 @@
 package com.example.productscanner;
 
+import static com.example.productscanner.Utill.DataApi.BASE_URL;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -13,11 +15,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.productscanner.Adapter.BarangAdapter;
 import com.example.productscanner.Model.BarangModel;
+import com.example.productscanner.Model.ProfileModel;
 import com.example.productscanner.Utill.DataApi;
 import com.example.productscanner.Utill.InterfaceBarang;
 
@@ -39,6 +44,7 @@ public class DashboardActivity extends AppCompatActivity {
     SearchView searchView;
     SwipeRefreshLayout swipeRefreshLayout;
     TextView tv_username;
+    ImageView img_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,14 @@ public class DashboardActivity extends AppCompatActivity {
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
+        img_profile.setOnClickListener(view ->{
+            startActivity(new Intent(DashboardActivity.this, EditProfile.class));
+        });
+
+        Glide.with(this)
+                .load(BASE_URL + "qrcode/profile_image/chika.png")
+                .into(img_profile);
 
 
 
@@ -211,6 +225,7 @@ public class DashboardActivity extends AppCompatActivity {
         searchView = findViewById(R.id.search_barr);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         tv_username = findViewById(R.id.tvt_1);
+        img_profile = findViewById(R.id.profile_image);
 
         recyclerView = findViewById(R.id.rDashboard);
     }
