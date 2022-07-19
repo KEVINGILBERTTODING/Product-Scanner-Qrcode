@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.productscanner.Adapter.BarangAdapter;
 import com.example.productscanner.Model.BarangModel;
 import com.example.productscanner.Model.ProfileModel;
@@ -40,9 +41,11 @@ public class DashboardActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private BarangAdapter barangAdapter;
     private List<BarangModel> barangModelList;
+    private List<ProfileModel> profileModels;
     private InterfaceBarang interfaceBarang;
     SearchView searchView;
     SwipeRefreshLayout swipeRefreshLayout;
+
     TextView tv_username;
     ImageView img_profile;
 
@@ -71,12 +74,6 @@ public class DashboardActivity extends AppCompatActivity {
         img_profile.setOnClickListener(view ->{
             startActivity(new Intent(DashboardActivity.this, EditProfile.class));
         });
-
-        Glide.with(this)
-                .load(BASE_URL + "qrcode/profile_image/chika.png")
-                .into(img_profile);
-
-
 
     }
 
@@ -142,6 +139,12 @@ public class DashboardActivity extends AppCompatActivity {
         String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
         if (counter){
             tv_username.setText("Welcome, "+username);
+
+            Glide.with(this)
+                    .load(BASE_URL + "qrcode/profile_image/" + username + ".png")
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(img_profile);
         }
         else{
             startActivity(new Intent(DashboardActivity.this,LoginActivity.class));

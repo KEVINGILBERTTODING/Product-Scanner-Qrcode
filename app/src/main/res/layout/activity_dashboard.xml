@@ -59,29 +59,27 @@
                         android:id="@+id/profile_image"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"
-                        android:layout_gravity="end"
                         android:layout_alignParentRight="true"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/_25sdp"
                         android:layout_marginRight="@dimen/_16sdp"
                         android:src="@color/black"
-                        android:layout_marginTop="@dimen/_10sdp"
 
                         app:civ_border_color="#FFFF"
                         app:civ_border_width="3dp" />
 
+
+                    <TextView
+                        android:id="@+id/tvt_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvt_1"
+                        android:fontFamily="@font/popsem"
+                        android:text="Scan qrcode untuk transaksi"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11sdp" />
+
                 </RelativeLayout>
-
-
-
-
-                <TextView
-                    android:id="@+id/tvt_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvt_1"
-                    android:fontFamily="@font/popsem"
-                    android:text="Scan barcode untuk mengambil data"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_11sdp" />
 
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/search_barr"
@@ -316,42 +314,7 @@
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
 
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="@dimen/_60sdp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/_15sdp"
-                                app:cardBackgroundColor="@color/white"
-                                app:cardCornerRadius="@dimen/_10sdp"
-                                app:cardUseCompatPadding="true">
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:padding="@dimen/_5sdp">
-
-                                    <TextView
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginTop="@dimen/_5sdp"
-                                        android:fontFamily="@font/popmed"
-                                        android:text="Keluar"
-                                        android:textAlignment="center"
-                                        android:textColor="@color/black"
-                                        android:textSize="@dimen/_8sdp" />
-
-                                </LinearLayout>
-
-                            </androidx.cardview.widget.CardView>
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
 
                     </LinearLayout>
 
