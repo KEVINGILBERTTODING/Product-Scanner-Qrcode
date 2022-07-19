@@ -19,7 +19,7 @@ public interface InterfaceProfile {
 
     // Menggunakan parameter id untuk mengambil data user
     Call<List<ProfileModel>> getUser(
-            @Query("id") Integer id
+            @Query("username") String username
     );
 
     @FormUrlEncoded

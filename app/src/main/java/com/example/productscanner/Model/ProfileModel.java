@@ -38,7 +38,7 @@ public class ProfileModel implements Serializable {
     }
 
     public String getImage() {
-        return BASE_URL + "/qrcode/profile_image/" + image;
+        return BASE_URL + "qrcode/profile_image/" + image;
     }
 
     public void setImage(String image) {

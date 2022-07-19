@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".EditProfile">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@drawable/wave"/>
+
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,16 +22,22 @@
         android:layout_marginBottom="@dimen/_30sdp"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imageview_profile"
-            android:layout_width="@dimen/_195sdp"
-            android:layout_height="@dimen/_195sdp"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:src="@color/black"
-            app:civ_border_color="#FFFF"
-            app:civ_border_width="3dp" />
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imageview_profile"
+                android:layout_width="@dimen/_195sdp"
+                android:layout_height="@dimen/_195sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@color/black"
+                app:civ_border_color="#FFFF"
+                app:civ_border_width="5dp" />
+
+
+        </RelativeLayout>
 
 
         <TextView
@@ -38,12 +50,20 @@
             android:text="Ganti gambar"
             android:textSize="@dimen/_9sdp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/popsem"
+            android:text="About"
+            android:textSize="@dimen/_12sdp" />
+
         <EditText
             android:id="@+id/etAbout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/popmed"
             android:gravity="top|left"
             android:hint="Contoh : Jl. Raya No. 1, RT.1/RW.1, Kec. Cimanggu, Kota Bandung, Jawa Barat 40265"
@@ -55,7 +75,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_simpan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/popsem"
             android:text="Simpan"

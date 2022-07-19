@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.productscanner.Model.ProfileModel;
 import com.example.productscanner.Utill.DataApi;
 import com.example.productscanner.Utill.InterfaceProfile;
@@ -38,6 +39,7 @@ public class EditProfile extends AppCompatActivity {
     ImageView imgProfile;
     ProgressDialog progressDialog;
     Bitmap bitmap;
+    String nama = "kevin gilbert";
     TextView tv_gallery;
 
     GalleryPhoto mGalery;
@@ -45,7 +47,6 @@ public class EditProfile extends AppCompatActivity {
     String selected_photo = null;
 
     public static final int progress_bar_type = 0;
-    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,17 @@ public class EditProfile extends AppCompatActivity {
         progressDialog = new ProgressDialog(EditProfile.this);
         mGalery = new GalleryPhoto(getApplicationContext());
 
+        etAbout.requestFocus();
+
         tv_gallery.setOnClickListener(view -> {
+            ActivityCompat.requestPermissions(
+                    EditProfile.this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    TAG_GALLERY
+            );
+        });
+
+        imgProfile.setOnClickListener(view -> {
             ActivityCompat.requestPermissions(
                     EditProfile.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
@@ -82,7 +93,7 @@ public class EditProfile extends AppCompatActivity {
             progressDialog.show();
 
         InterfaceProfile interfaceProfile = DataApi.getClient().create(InterfaceProfile.class);
-        Call<List<ProfileModel>> call = interfaceProfile.getUser(2);
+        Call<List<ProfileModel>> call = interfaceProfile.getUser(nama);
         call.enqueue(new retrofit2.Callback<List<ProfileModel>>() {
             @Override
             public void onResponse(Call<List<ProfileModel>> call, retrofit2.Response<List<ProfileModel>> response) {
@@ -91,7 +102,11 @@ public class EditProfile extends AppCompatActivity {
                     List<ProfileModel> profileModels = response.body();
                     for (ProfileModel profileModel : profileModels){
                         etAbout.setText(profileModel.getAbout());
-                        Glide.with(EditProfile.this).load(profileModel.getImage()).into(imgProfile);
+                        Glide.with(EditProfile.this)
+                                .load(profileModel.getImage())
+                                .skipMemoryCache(true)
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                .into(imgProfile);
                     }
                 }
             }

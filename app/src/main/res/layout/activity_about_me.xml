@@ -10,7 +10,7 @@
 
 
     <ImageView
-        android:id="@+id/det_image"
+        android:id="@+id/photo_sampul"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_400sdp"
         android:scaleType="fitXY"
@@ -37,6 +37,7 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginRight="@dimen/_16sdp"
                 android:fontFamily="@font/popsem"
+                android:maxLength="20"
                 android:text="Diana Ariance Thamara"
                 android:textColor="@color/main"
                 android:textSize="@dimen/_12sdp" />
@@ -99,7 +100,7 @@
                             >
 
                             <TextView
-                                android:id="@+id/tv_ancestry"
+                                android:id="@+id/tv_desc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/popmed"
@@ -138,7 +139,7 @@
 
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profile"
+        android:id="@+id/photo_profile"
         android:layout_width="@dimen/_110sdp"
         android:layout_height="@dimen/_150sdp"
         android:layout_marginLeft="@dimen/_16sdp"
