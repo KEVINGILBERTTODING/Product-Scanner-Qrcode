@@ -24,10 +24,12 @@ public interface InterfaceProfile {
 
     @FormUrlEncoded
     @POST("qrcode/load_profile.php")
-    Call<ProfileModel> simpanProfile(@Field("kode") String username,
-                                     @Field("about") String about,
-                                     @Field("image") String image);
+    Call<ProfileModel> simpanUser(@Field("username") String username);
 
+@POST("qrcode/load_profile.php")
+    Call<ProfileModel> updateProfile(@Field("username") String username,
+                                 @Field("about") String about,
+                                 @Field("image") String image);
 
 }
 

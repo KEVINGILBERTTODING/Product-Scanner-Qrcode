@@ -3,6 +3,7 @@ package com.example.productscanner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +11,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.productscanner.Model.ProfileModel;
+import com.example.productscanner.Model.TransaksiModel;
+import com.example.productscanner.Utill.DataApi;
+import com.example.productscanner.Utill.InterfaceProfile;
+import com.example.productscanner.Utill.InterfaceTransaksi;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -74,6 +84,23 @@ public class RegisterActivity extends AppCompatActivity {
                                 // Mengirim data ke firebase realtime database
 
                                 databaseReference.child("users").child(usernameTxt).child("password").setValue(passwordTxt);
+
+                                // Mengirim data ke mysql database
+
+                                DataApi.getClient().create(InterfaceProfile.class).simpanUser(usernameTxt).enqueue(new Callback<ProfileModel>() {
+                                    @Override
+                                    public void onResponse(Call<ProfileModel> call, Response<ProfileModel> response) {
+                                        if (response.isSuccessful()) {
+                                            Toast.makeText(RegisterActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "Data gagal disimpan", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                    @Override
+                                    public void onFailure(Call<ProfileModel> call, Throwable t) {
+//                                        Toast.makeText(RegisterActivity.this, "Cek koneksi internet anda", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
 
                                 Toast.makeText(RegisterActivity.this, "Berhasil registrasi.", Toast.LENGTH_SHORT).show();
                                 finish();
