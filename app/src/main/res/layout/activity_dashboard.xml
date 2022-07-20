@@ -60,10 +60,9 @@
                         android:layout_height="@dimen/_30sdp"
                         android:layout_alignParentRight="true"
                         android:layout_gravity="end"
-                        android:layout_marginTop="@dimen/_25sdp"
-                        android:layout_marginRight="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
                         android:src="@color/black"
-
                         app:civ_border_color="#FFFF"
                         app:civ_border_width="3dp" />
 

@@ -14,7 +14,7 @@
     android:background="@color/white">
 
     <View
-        android:layout_width="5dp"
+        android:layout_width="@dimen/_5sdp"
         android:layout_height="@dimen/_150sdp"
         android:background="@color/main"
         android:rotation="360"
@@ -37,11 +37,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_toRightOf="@id/img_barang2"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_16sdp"
-            >
+            android:layout_toRightOf="@id/img_barang2"
+            android:orientation="vertical">
 
 
             <TextView
@@ -50,10 +49,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:fontFamily="@font/popsem"
+                android:padding="@dimen/_2sdp"
                 android:text="AirPods Pro"
                 android:textColor="@color/main"
-                android:padding="@dimen/_2sdp"
-                android:textSize="@dimen/_12sdp"/>
+                android:textSize="@dimen/_12sdp" />
 
 
             <TextView
@@ -72,8 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Unit"
                 android:fontFamily="@font/popmed"
+                android:text="Unit"
                 android:textSize="@dimen/_10sdp" />
 
 
@@ -81,11 +80,11 @@
                 android:id="@+id/tv_harga2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Harga"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:textColor="@color/main"
+                android:layout_weight="1"
                 android:fontFamily="@font/popmed"
+                android:text="Harga"
+                android:textColor="@color/main"
                 android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>

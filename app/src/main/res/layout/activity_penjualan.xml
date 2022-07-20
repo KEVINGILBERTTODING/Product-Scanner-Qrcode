@@ -60,7 +60,7 @@
                 android:layout_height="@dimen/_200sdp"
                 android:scaleType="fitXY"
                 android:layout_gravity="center"
-                android:src="@drawable/frik"
+                android:src="@drawable/sample_product"
                 android:layout_marginTop="@dimen/_10sdp"
                 app:shapeAppearanceOverlay="@style/roundedCorners" />
 
@@ -210,20 +210,7 @@
                 android:ems="10"
                 android:textSize="17sp"
                 android:fontFamily="@font/popmed" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total:"
-                android:textSize="17sp"
-                android:fontFamily="@font/popmed"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:editable="false"
-                android:fontFamily="@font/popmed"
-                android:textSize="17sp" />
+
 
             <TextView
                 android:id="@+id/tv_total"
