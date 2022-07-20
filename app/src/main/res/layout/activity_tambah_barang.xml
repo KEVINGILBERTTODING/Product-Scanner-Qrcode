@@ -150,6 +150,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/popmed"
+                        android:inputType="number"
                         android:id="@+id/xjumlah" />
                 </LinearLayout>
 
@@ -168,6 +169,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/popmed"
+                        android:inputType="number"
                         android:id="@+id/xharga" />
                 </LinearLayout>
 
