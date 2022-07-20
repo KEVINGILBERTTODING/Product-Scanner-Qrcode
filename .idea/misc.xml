@@ -31,14 +31,20 @@
         <entry key="..\:/ScanQRCode/app/src/main/res/drawable/ic_scanner.xml" value="0.35188968335035753" />
         <entry key="..\:/ScanQRCode/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/ScanQRCode/app/src/main/res/layout/activity_splash_screen.xml" value="0.19519927536231885" />
-        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_about_me.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_about_me.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_dashboard.xml" value="0.16799999999999998" />
-        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_edit_profile.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_edit_profile.xml" value="0.1" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_edit_profle.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_login.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_penjualan.xml" value="0.271875" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_tambah_barang.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_transaksi.xml" value="0.2074074074074074" />
         <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/activity_update_password.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/content_edit_profle.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/form_penjualan.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/list_data_barang.xml" value="0.2074074074074074" />
+        <entry key="..\:/Users/lenovo/Desktop/product-scanner/app/src/main/res/layout/list_data_barang2.xml" value="0.2074074074074074" />
         <entry key="..\:/scanner/app/src/main/res/drawable/bg_container.xml" value="0.2145" />
         <entry key="..\:/scanner/app/src/main/res/drawable/bg_title.xml" value="0.2145" />
         <entry key="..\:/scanner/app/src/main/res/drawable/bg_title2.xml" value="0.2285" />

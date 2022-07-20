@@ -250,7 +250,7 @@ public class PenjualanActivity extends AppCompatActivity {
         String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
 
 
-        DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, jumlah_brg).enqueue(new Callback<TransaksiModel>() {
+        DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, stokBarang).enqueue(new Callback<TransaksiModel>() {
             @Override
             public void onResponse(Call<TransaksiModel> call, Response<TransaksiModel> response) {
                 if (response.isSuccessful()) {
@@ -259,6 +259,7 @@ public class PenjualanActivity extends AppCompatActivity {
                     // Memanggil method simpan ke firebase
                     simpanPenjualan(kode_brg, nama_brg, harga_brg, totalBarang, jumlahPenjualan, total, satuan_barg, tanggal, waktu, username);
 
+                    // Update data stok di firebase
                     refBarang.child(kode_brg).child("jumlah").setValue(stokBarang);
 
                     Toast.makeText(PenjualanActivity.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();

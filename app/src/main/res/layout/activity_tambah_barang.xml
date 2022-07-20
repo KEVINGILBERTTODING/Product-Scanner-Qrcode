@@ -76,7 +76,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:text="Entry data Barang"
-                    android:textSize="@dimen/_14sdp"
+                    android:textSize="@dimen/_12sdp"
                     android:fontFamily="@font/popsem"
                     android:textColor="@color/black"
                     android:layout_gravity="center"
@@ -150,12 +150,12 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/popmed"
+                        android:inputType="number"
                         android:id="@+id/xjumlah" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-
                     android:layout_marginTop="@dimen/_10sdp"
                     android:layout_height="wrap_content">
                     <TextView
@@ -169,6 +169,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_12sdp"
                         android:fontFamily="@font/popmed"
+                        android:inputType="number"
                         android:id="@+id/xharga" />
                 </LinearLayout>
 
@@ -182,27 +183,27 @@
                 <com.google.android.material.button.MaterialButton
 
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
                     android:text="Pilih Gambar"
+                    android:fontFamily="@font/popmed"
                     android:textAllCaps="false"
-                    app:cornerRadius="@dimen/_10sdp"
+                    app:cornerRadius="@dimen/_5sdp"
                     android:layout_marginTop="@dimen/_50sdp"
                     android:layout_weight="1"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_9sdp"
                     android:id="@+id/btn_img" />
 
 
                 <com.google.android.material.button.MaterialButton
 
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
                         android:text="Simpan"
-                        app:cornerRadius="@dimen/_10sdp"
+                        app:cornerRadius="@dimen/_5sdp"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:layout_weight="1"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/_12sdp"
-                        android:onClick="simpandata"
+                        android:textSize="@dimen/_9sdp"
                         android:id="@+id/buttonSave" />
 
 

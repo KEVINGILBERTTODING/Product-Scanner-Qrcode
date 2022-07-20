@@ -91,6 +91,7 @@
                     <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
                         >
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
@@ -106,7 +107,6 @@
                                 android:fontFamily="@font/popmed"
                                 android:text="@string/profilesaya"
                                 android:textSize="@dimen/_9sdp"
-                                android:layout_marginTop="@dimen/_25sdp"
 
                                 />
 
@@ -156,19 +156,6 @@
         android:orientation="vertical"
         >
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_logout"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginRight="@dimen/_20sdp"
-            android:fontFamily="@font/popmed"
-            android:text="Log Out"
-            android:textAllCaps="false"
-            android:textSize="@dimen/_10sdp"
-            app:cornerRadius="@dimen/_10sdp" />
-        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_udpate_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
@@ -177,7 +164,20 @@
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginRight="@dimen/_20sdp"
             android:fontFamily="@font/popmed"
-            android:text="Update Password"
+            android:text="Ganti Password"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_10sdp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_logout"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:fontFamily="@font/popmed"
+            android:text="Keluar"
             android:textAllCaps="false"
             android:textSize="@dimen/_10sdp"
             app:cornerRadius="@dimen/_10sdp" />

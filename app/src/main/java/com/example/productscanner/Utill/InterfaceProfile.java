@@ -26,6 +26,7 @@ public interface InterfaceProfile {
     @POST("qrcode/load_profile.php")
     Call<ProfileModel> simpanUser(@Field("username") String username);
 
+    @FormUrlEncoded
 @POST("qrcode/load_profile.php")
     Call<ProfileModel> updateProfile(@Field("username") String username,
                                  @Field("about") String about,

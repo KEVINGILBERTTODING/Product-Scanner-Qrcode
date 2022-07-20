@@ -10,11 +10,6 @@
     card_view:cardUseCompatPadding="true"
     android:layout_height="wrap_content">
 
-<!--    <View-->
-<!--        android:layout_width="@dimen/_5sdp"-->
-<!--        android:layout_height="@dimen/_50sdp"-->
-<!--        android:rotation="360"-->
-<!--        android:background="@color/main"/>-->
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"

@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         fabAdd.setColorFilter(getResources().getColor(R.color.white));
 
-
-
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -64,14 +62,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
         tampilkanData();
-
-
-
-
         // Fungsi saat memasukkan kata ke dalam searchview
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

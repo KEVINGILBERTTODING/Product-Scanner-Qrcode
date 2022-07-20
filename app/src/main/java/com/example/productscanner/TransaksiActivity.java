@@ -44,10 +44,6 @@ public class TransaksiActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaksi);
 
-        // Method hidenavbar
-
-        hideNavbar();
-
         // Method initilize
 
         initilize();
@@ -159,12 +155,6 @@ public class TransaksiActivity extends AppCompatActivity  {
         });
     }
 
-    private void hideNavbar() {
-
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-    }
 
     private void initilize() {
         fabAdd = findViewById(R.id.btn_scanner);
@@ -205,12 +195,6 @@ public class TransaksiActivity extends AppCompatActivity  {
 
 
     }
-
-
-
-
-
-
     }
 
 

@@ -8,11 +8,14 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,11 +30,14 @@ import com.example.productscanner.Utill.InterfaceProfile;
 import com.google.android.material.snackbar.Snackbar;
 import com.kosalgeek.android.photoutil.GalleryPhoto;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EditProfile extends AppCompatActivity {
     Button btnSimpan;
@@ -39,8 +45,8 @@ public class EditProfile extends AppCompatActivity {
     ImageView imgProfile;
     ProgressDialog progressDialog;
     Bitmap bitmap;
-    String nama = "kevin gilbert";
     TextView tv_gallery;
+
 
     GalleryPhoto mGalery;
     private final int TAG_GALLERY = 2222;
@@ -83,17 +89,45 @@ public class EditProfile extends AppCompatActivity {
         getProfile();
 
 
+
+        // Saat button simpan di klik
+        btnSimpan.setOnClickListener(view -> {
+
+            // Validasi jika gambar null
+
+            if (bitmap == null){
+                Toast.makeText(this, "Mohon pilih gambar", Toast.LENGTH_SHORT).show();
+                tv_gallery.setError("Mohon pilih gambar");
+            }
+
+            else{
+
+                updateProfile();
+            }
+
+        });
+
+
+
+
     }
+
+
 
     // Method untuk mendapatkan about user
 
     private void getProfile() {
+        SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
+        Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
+        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+
+
        ProgressDialog progressDialog = new ProgressDialog(EditProfile.this);
          progressDialog.setMessage("Sedang mengambil data...");
             progressDialog.show();
 
         InterfaceProfile interfaceProfile = DataApi.getClient().create(InterfaceProfile.class);
-        Call<List<ProfileModel>> call = interfaceProfile.getUser(nama);
+        Call<List<ProfileModel>> call = interfaceProfile.getUser(username);
         call.enqueue(new retrofit2.Callback<List<ProfileModel>>() {
             @Override
             public void onResponse(Call<List<ProfileModel>> call, retrofit2.Response<List<ProfileModel>> response) {
@@ -117,6 +151,56 @@ public class EditProfile extends AppCompatActivity {
                 Toast.makeText(EditProfile.this, "Gagal mengambil data", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void updateProfile() {
+
+
+        if (etAbout.getText().toString().isEmpty()){
+            etAbout.setError("Tidak boleh kosong");
+            etAbout.requestFocus();
+            return;
+        }
+
+        else{
+        progressDialog.setMessage("Mengirim Data");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+
+
+
+
+        SharedPreferences sharedPreferences=getSharedPreferences("logindata",MODE_PRIVATE);
+        Boolean counter=sharedPreferences.getBoolean("logincounter",Boolean.valueOf(String.valueOf(MODE_PRIVATE)));
+        String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
+
+
+        // Mengirim data ke mysql database
+
+        DataApi.getClient().create(InterfaceProfile.class).updateProfile(username,etAbout.getText().toString(), imageString).enqueue(new Callback<ProfileModel>() {
+            @Override
+            public void onResponse(Call<ProfileModel> call, Response<ProfileModel> response) {
+
+                progressDialog.dismiss();
+                if (response.isSuccessful()) {
+
+                    Toast.makeText(EditProfile.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(EditProfile.this, AboutMe.class));
+                } else {
+                    Toast.makeText(EditProfile.this, "Data gagal disimpan", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<ProfileModel> call, Throwable t) {
+             Toast.makeText(EditProfile.this, "Cek koneksi internet anda", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        }
     }
 
 
