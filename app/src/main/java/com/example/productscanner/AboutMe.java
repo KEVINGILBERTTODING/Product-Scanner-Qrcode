@@ -42,7 +42,6 @@ public class AboutMe extends AppCompatActivity {
 
         initilize();
 
-        hideNavigationBar();
 
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -78,12 +77,6 @@ public class AboutMe extends AppCompatActivity {
 
     }
 
-
-    private void hideNavigationBar() {
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-    }
 
     // Method untuk mendapatkan about user
 

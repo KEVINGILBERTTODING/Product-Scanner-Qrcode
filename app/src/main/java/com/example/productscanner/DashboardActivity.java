@@ -56,7 +56,6 @@ public class DashboardActivity extends AppCompatActivity {
 
 
         initilize();
-        hideNavbar();
         btnListener();
 
 
@@ -153,12 +152,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
     }
-    private void hideNavbar() {
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-    }
 
     // Method untuk realtime searchview
 
