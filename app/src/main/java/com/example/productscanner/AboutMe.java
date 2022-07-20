@@ -60,7 +60,7 @@ public class AboutMe extends AppCompatActivity {
         });
 
         btn_edit_profile.setOnClickListener(view -> {
-            startActivity(new Intent(AboutMe.this, EditProfile.class));
+           startActivity(new Intent(AboutMe.this, EditProfile.class));
         });
 
         getProfile();

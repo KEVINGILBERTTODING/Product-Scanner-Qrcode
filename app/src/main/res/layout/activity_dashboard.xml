@@ -54,8 +54,7 @@
                         android:textSize="@dimen/_9sdp" />
 
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/profile_image"
                         android:layout_width="@dimen/_30sdp"
                         android:layout_height="@dimen/_30sdp"

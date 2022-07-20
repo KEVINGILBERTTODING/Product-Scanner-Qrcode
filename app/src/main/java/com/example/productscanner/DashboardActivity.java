@@ -72,7 +72,7 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         img_profile.setOnClickListener(view ->{
-            startActivity(new Intent(DashboardActivity.this, EditProfile.class));
+            startActivity(new Intent(DashboardActivity.this, AboutMe.class));
         });
 
     }
