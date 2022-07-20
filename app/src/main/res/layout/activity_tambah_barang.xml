@@ -202,7 +202,6 @@
                         android:layout_weight="1"
                         android:textAllCaps="false"
                         android:textSize="@dimen/_9sdp"
-                        android:onClick="simpandata"
                         android:id="@+id/buttonSave" />
 
 

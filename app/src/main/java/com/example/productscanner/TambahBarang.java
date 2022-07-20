@@ -38,10 +38,9 @@ import retrofit2.Response;
 public class TambahBarang extends AppCompatActivity {
     EditText xkd_brg, xnm_brg, xhrg_brg, xjml_brg, xsatuan_brg;
     InterfaceBarang interfaceBarang;
-    Button btnImage;
+    Button btnImage, buttonSave;
     ImageView imageView;
     ProgressDialog pd;
-    String kodeBarang;
 
     Bitmap bitmap;
 
@@ -70,10 +69,14 @@ public class TambahBarang extends AppCompatActivity {
         xjml_brg = findViewById(R.id.xjumlah);
         xsatuan_brg = findViewById(R.id.xsatuan);
         btnImage    =   findViewById(R.id.btn_img);
+        buttonSave     =   findViewById(R.id.buttonSave);
         imageView   =   findViewById(R.id.inp_gambar);
         interfaceBarang = DataApi.getClient().create(InterfaceBarang.class);
 
-
+        if (bitmap ==  null) {
+            Toast.makeText(this, "Gambar belum di pilih", Toast.LENGTH_SHORT).show();
+            btnImage.setError("Pilih gambar terlebih dahulu");
+        }
 
         pd = new ProgressDialog(TambahBarang.this);
         mGalery = new GalleryPhoto(getApplicationContext());
@@ -89,17 +92,31 @@ public class TambahBarang extends AppCompatActivity {
                 );
             }
         });
+
+        buttonSave.setOnClickListener(view -> {
+
+            // validasi saat image produk null
+
+            if (bitmap ==  null) {
+                Toast.makeText(this, "Gambar belum di pilih", Toast.LENGTH_SHORT).show();
+                btnImage.setError("Pilih gambar terlebih dahulu");
+            }
+
+            else {
+                simpandata();
+            }
+
+        });
     }
 
 
-    // Method saat button di klik
-    public void simpandata(View view) {
+    // Method untuk menyimpan data barang
+    public void simpandata(){
 
         // Validasi form
 
         if (xkd_brg.getText().toString().isEmpty() || xnm_brg.getText().toString().isEmpty() || xhrg_brg.getText().toString().isEmpty() ||
             xjml_brg.getText().toString().isEmpty() ||xsatuan_brg.getText().toString().isEmpty()) {
-
             xkd_brg.setError("Masukkan kode barang");
             xnm_brg.setError("Masukkan nama barang");
             xhrg_brg.setError("Masukkan harga barang");
@@ -116,6 +133,7 @@ public class TambahBarang extends AppCompatActivity {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] imageBytes = baos.toByteArray();
             final String imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+
 
             String kode_brg = xkd_brg.getText().toString();
             String nama_brg = xnm_brg.getText().toString();
