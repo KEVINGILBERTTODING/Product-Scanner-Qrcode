@@ -69,8 +69,19 @@
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:src="@drawable/success"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_gravity="center"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/berhasil1"
+                />
+
 
             <TextView
                 android:id="@+id/nama_product"
