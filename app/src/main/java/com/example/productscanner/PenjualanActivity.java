@@ -250,7 +250,7 @@ public class PenjualanActivity extends AppCompatActivity {
         String username=sharedPreferences.getString("useremail",String.valueOf(MODE_PRIVATE));
 
 
-        DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, jumlah_brg).enqueue(new Callback<TransaksiModel>() {
+        DataApi.getClient().create(InterfaceTransaksi.class).simpanPenjualan(kode_brg, stokBarang).enqueue(new Callback<TransaksiModel>() {
             @Override
             public void onResponse(Call<TransaksiModel> call, Response<TransaksiModel> response) {
                 if (response.isSuccessful()) {
